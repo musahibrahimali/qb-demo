@@ -1,0 +1,164 @@
+
+<div ng-include="'app/patials/loadertmp.html'"></div>
+
+<md-content layout="column" id="top">
+  <section layout="row" flex>
+
+
+<div ng-include="'app/patials/leftnav.html'"></div>
+
+    <md-content  flex layout="column" >
+
+    <div ng-include="'app/patials/toolbar.html'"></div>
+  <!--   <div ng-include="'app/patials/toolbar.html'"></div> -->
+
+  
+
+  <h1 class="md-headline" style="color:#37474F;margin:15px;"> Challenge History. </h1>
+    
+<md-content layout="row" layout-padding>
+      
+           
+  
+     
+<md-content  flex flex-gt-sm="70"  class="homecard">
+
+   
+
+
+
+<div  class="homecard historyRecord"  ng-repeat="challenge in vm.challengeRecords">
+
+<h3 style="margin:0px 0px 10px 0px;text-align:center;font-weight:100;">{{challenge.subject}}</h3>
+
+ <div  hide-gt-sm layout="row" layout-align="center center">
+  
+<user-avatar><img src="images/avatar.jpg" style="height:70px; width:70px;
+border-radius:90%;  border:2px solid #fff;" alt="">
+
+          </user-avatar>
+
+<h1 style="margin:15px;"> VS </h1>
+
+<user-avatar><img src="images/avator5.jpg" style="height:70px; width:70px;border-radius:90%;
+border:2px solid #fff;" alt="">
+
+          </user-avatar>
+
+</div>
+
+<div layout="row">
+  
+   
+
+
+<div flex layout="column" layout-gt-sm="row" layout-align="end center" layout-padding >
+<p style="margin:0px;text-align:right;">{{challenge.myName}} <span style="color:#777;">( you )</span> <br> 
+          <span style="color:#777;">from {{challenge.mySchool}}
+</span>
+<br>
+
+<span style="font-weight:bold;">score: {{challenge.myScore || 'pending'}}</span>
+<img ng-show="vm.cup(challenge.myScore,challenge.opScore)" 
+ src="images/cup.png" alt="cup" style="width:20px;height:30px;float: right;">
+
+</p>
+
+
+
+
+</div>
+
+
+ <div  hide show-gt-sm layout="row" layout-align="center center">
+  
+<user-avatar><img ng-src="{{vm.baseUrl+challenge.myPicture}}" style="height:100px; width:100px;
+border-radius:90%;  border:2px solid #fff;" alt="">
+
+          </user-avatar>
+
+<h1 style="margin:15px;"> VS</h1>
+
+<user-avatar><img ng-src="{{vm.baseUrl+challenge.opPicture}}" style="height:100px;width:100px;border-radius:90%;
+border:2px solid #fff;" alt="">
+
+          </user-avatar>
+
+</div>
+
+ <!-- /*   "myName": "kofi karikari",
+      "mySchool": "Royals of Shakespeare ",
+      "myPicture": "public/img/users/story2.jpg",
+      "myScore": "1/30",
+      "subject": "mathematics",
+      "opName": "Ransford Mensah",
+      "opSchool": "Royals of Shakespeare ",
+      "opPicture": "public/img/users/avator811.jpg",
+      "opScore": null*/ -->
+
+
+<div flex layout="column" layout-gt-sm="row" layout-align="start center" layout-padding >
+<p style="margin:0px;"> {{challenge.opName}}<br> <span style="color:#777;">from 
+{{challenge.opSchool}} 
+</span>
+<br>
+<span style="font-weight:bold;">score: {{challenge.opScore || 'pending'}}</span>
+<img ng-show="!vm.cup(challenge.myScore,challenge.opScore)" src="images/cup.png" alt="cup" style="width:20px;height:30px;float:left;">
+
+</p>
+
+
+</div>
+
+  
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</md-content>
+
+<md-content hide show-gt-sm flex="30">
+
+<div layout="column" layout-align="center center">
+  
+  <img src="images/addd.png" alt="">
+  <br>
+  <br>
+  <img src="images/add.jpg" alt="">
+</div>
+
+
+
+</md-content>
+
+ 
+
+
+
+
+  </md-content>
+
+
+
+
+
+
+
+
+    </md-content>
+    
+  </section>
+</md-content>
+

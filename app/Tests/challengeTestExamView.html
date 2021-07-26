@@ -1,0 +1,135 @@
+<div ng-include="'app/patials/loadertmp.html'"></div>
+
+<div layout="column"  id="marker" >
+  <section layout="row" flex>
+    
+<div ng-include="'app/patials/leftnav.html'"></div>
+
+    <md-content flex layout="column" >
+    <div ng-include="'app/patials/toolbar.html'"></div>
+  <!--   <div ng-include="'app/patials/toolbar.html'"></div> -->
+ 
+
+
+<div class="fabSpeedDialdemoBasicUsage">
+  
+
+<div class="lock-size" layout="row" layout-align="center center">
+      <md-fab-speed-dial  md-open="vm.isOpen" md-direction="up"
+                         class="md-scale" ng-cloak>
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-warn md-raised" style="background-color:#D64040;">
+           <!-- <md-tooltip>
+                    Filter
+                   </md-tooltip> -->
+            <md-icon ><i class="material-icons">filter_list</i></md-icon>
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          
+          <md-button ng-click="vm.done()" aria-label="unanswered questions" class="md-fab md-raised md-mini">
+           <md-tooltip>
+           Done 
+        </md-tooltip>
+            <md-icon  aria-label="Facebook"><i class="material-icons">done</i></md-icon>
+          </md-button>
+
+          <md-button ng-click="vm.viewUnAnswered()" aria-label="unanswered questions" class="md-fab md-raised md-mini">
+           <md-tooltip>
+          Unanswered questions
+        </md-tooltip>
+            <md-icon  aria-label="Facebook"><i class="material-icons">clear_all</i></md-icon>
+          </md-button>
+
+          <md-button ng-click="vm.viewAll()" aria-label="all questions" class="md-fab md-raised md-mini">
+           <md-tooltip>
+        All Questions
+        </md-tooltip>
+            <md-icon  aria-label="Google Hangout"><i class="material-icons">sort</i></md-icon>
+          </md-button>
+        </md-fab-actions>
+      </md-fab-speed-dial>
+    </div>
+
+</div>
+
+<div layout="row" layout-padding style="margin-top:15px;"> 
+
+
+  <md-content   flex style="">
+  
+  <md-content layout="row" ng-click="vm.done()" style="position:fixed; top:70px;z-index:10;padding:0px; right:15px; cursor:pointer">
+
+  <md-tooltip md-direction="left">
+          Click Time to stop work
+        </md-tooltip>
+    
+     <div flex></div>
+     
+    &nbsp;
+     <h3 class="md-title md-raised"  style="color:white;background:#263C49; border-radius:5%;padding:5px;">
+     <md-icon style="color:white;"> <i class="material-icons">alarm</i>
+     </md-icon>{{vm.hour}}:{{vm.min}}:{{vm.sec}} </h3> 
+      <div flex></div>
+   
+  </md-content>
+                     <!-- 
+  <md-progress-linear md-mode="indeterminate"></md-progress-linear> -->
+
+     
+  <h1 style="color:#263C49;text-align:center">{{vm.questionName}} Challenge</h1>
+  <p style="color:#263C49;text-align:center">Time : {{vm.challengetime}} min | 
+  No. of Questions : {{vm.challengenumofquestion}} </p>
+<md-content ng-show="vm.marking" layout="column" layout-padding layout-align="center center">
+    <img src="images/markloader.gif" alt="">
+    <h3 style="color:#263C49;text-align:center">...marking test...</h3>
+</md-content>
+
+  <div ng-show="!vm.marking">
+   <md-card ng-hide="vm.filterFun(question)" layout-padding 
+   ng-repeat="question in vm.questions track by question.number"> 
+
+   <h3 style="margin:0px;" class="md-body-2">Question: {{question.number}}</h3>
+
+     <div style="color:#777;" ng-bind-html="vm.sanitize(question.exam_question)"></div> 
+  <!--  <p style="color:#777;" >{{question.exam_question}}</p> -->
+  
+    <md-radio-group  
+    ng-model="question.choice" style="color:#777;">
+      <!-- <md-radio-button ng-click="vm.answered(question)" class="md-primary" aria-checked="true" value="A">{{question.A}} </md-radio-button>
+      <md-radio-button ng-click="vm.answered(question)" class="md-primary" value="B">{{question.B}} </md-radio-button>
+      <md-radio-button ng-click="vm.answered(question)" class="md-primary" value="C">{{question.C}} </md-radio-button> -->
+
+      <md-radio-button ng-click="vm.answered(question)" ng-repeat="posAns in question.options" 
+
+        class="md-primary" value="{{posAns.label}}">
+       <span style="color:black;">{{posAns.label}}</span> &nbsp;&nbsp;{{posAns.posAnswer}} </md-radio-button>
+      
+    </md-radio-group>
+
+    </md-card>
+
+    
+</div>
+
+
+
+
+
+  </md-content>
+
+  <!--  <md-content   flex="30" style="border:solid">
+                    <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+  
+  afsdfasd
+  
+    </md-content> -->
+
+
+</div>
+
+    </md-content>
+    
+  </section>
+</div>
+

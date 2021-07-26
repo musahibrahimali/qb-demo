@@ -1,0 +1,224 @@
+
+<md-sidenav   class="md-sidenav-left" 
+   md-is-locked-open="$mdMedia('gt-md')" 
+
+ class="md-sidenav-left" style="width:250px;"></md-sidenav>
+ 
+<md-sidenav
+   md-component-id="left" 
+        
+  md-is-locked-open="$mdMedia('gt-md')"
+        md-disable-backdrop
+        md-whiteframe="5" style="width:250px;height:100vh;position:fixed;background:#263C49;">
+
+     <md-toolbar class="md-tall md-hue-2" style="background:#d64040;">
+     <!-- <md-button hide-gt-md ng-click="vm.openLeftMenu()" class="md-icon-button" 
+     aria-label="menu">
+         <md-icon> <i class="material-icons">menu</i> </md-icon>
+       </md-button> -->
+        <span flex></span>
+        <div layout="row" class="md-toolbar-tools-bottom inset">
+          <user-avatar>
+          <img src="{{vm.baseUrl+vm.userInfo.profilePic}}"
+
+           style="height:100px; width:100px;border-radius:90%;  border:2px solid #FFF;" alt="">
+          </user-avatar>
+        <span flex></span>
+          <div style="padding:10px;">
+          <p class="md-caption">{{vm.userInfo.firstName}} 
+          {{vm.userInfo.lastName}}</p>
+          <p class="md-caption"> {{vm.userInfo.email}} </p>
+          </div>
+        </div>
+      </md-toolbar>
+
+     <!--  <md-toolbar class="md-hue-2">
+     
+     
+     
+       <div class="md-toolbar-tools"> 
+       <md-button hide-gt-md ng-click="vm.openLeftMenu()" class="md-icon-button" 
+     aria-label="menu">
+         <md-icon> <i class="material-icons">menu</i> </md-icon>
+       </md-button> &nbsp;Sidenav Left
+       </div>
+     
+     </md-toolbar> -->
+
+      <md-content style="background:#263C49;color:#cccccc;" layout-padding>
+        <md-list>
+   
+
+     <md-list-item md-menu-origin ui-sref="#" ng-click="vm.showmenu1()"> 
+             <md-icon>
+          <i class="material-icons" style="color:white">fitness_center</i></md-icon>
+          <p>Prep Test </p>
+           </md-list-item>
+     <!--  vm.menu1 vm.menu1 is for toggle the menu. values(true/false) --> 
+        <div ng-show="vm.menu1" class="nga-fast nga-fade" style="background:#273138;width:100%;margin:0px;">
+      
+         <md-list-item ng-click="vm.getload('Loading Subjects')"
+          ui-sref="preptestgeneral({'userLevel':vm.userInfo.eduLevel})"> 
+             <md-icon>
+          <i class="material-icons" style="color:white">&nbsp;&nbsp;track_changes</i></md-icon>
+          <p>General</p>
+           </md-list-item>
+           <md-divider></md-divider>
+           <md-list-item 
+           ng-click="vm.getload('Loading Institutions')" ui-sref="preptestByInst({'userLevel':vm.userInfo.eduLevel})"> 
+             <md-icon>
+          <i class="material-icons" style="color:white">&nbsp;&nbsp;account_balance</i></md-icon>
+          <p>By Institution</p>
+           </md-list-item>
+           <md-divider></md-divider>
+      
+          
+           </div> 
+
+
+
+
+
+
+
+
+<md-list-item md-menu-origin ui-sref="#/" ng-click="vm.showchallengMenu()"> 
+            <md-icon>
+          <i class="material-icons" style="color:white">supervisor_account</i></md-icon>
+          <p>Challenge  <!-- <span class="badge badge-error">{{vm.challengeCount || 7}}</span> -->
+          </p>
+
+           </md-list-item>
+<!--  vm.menu1--> <!-- vm.menu1 is for toggle the menu. values(true/false)--> 
+        <div ng-show="vm.challengMenu" class="nga-fast nga-fade" style="background:#273138;width:100%;margin:0px;">
+
+        <md-list-item ng-click="vm.getload('Lets pick up a brain fight')"
+          ui-sref="newChallenge"> 
+             <md-icon>
+          <i class="material-icons" style="color:white">&nbsp;&nbsp;group_add</i></md-icon>
+          <p>New Challenge</p>
+           </md-list-item>
+           <md-divider></md-divider>
+
+         <md-list-item ng-click="vm.getload('Loading Challenge Requests')"
+          ui-sref="challengeRequests"> 
+             <md-icon>
+          <i class="material-icons" style="color:white">&nbsp;&nbsp;remove_red_eye</i></md-icon>
+          <p>View Requests</p>
+           </md-list-item>
+           <md-divider></md-divider>
+
+          <!--  <md-list-item 
+          ng-click="vm.getload('Loading Institutions')" ui-sref="preptestByInst({'userLevel':vm.userInfo.eduLevel})"> 
+            <md-icon>
+                    <i class="material-icons" style="color:white">&nbsp;&nbsp;pause_circle_outline</i></md-icon>
+                    <p>Pending</p>
+          </md-list-item>
+          <md-divider></md-divider> -->
+
+           <md-list-item 
+           ng-click="vm.getload('Loading Challenge Records')" ui-sref="challengeHistory"> 
+             <md-icon>
+          <i class="material-icons" style="color:white">&nbsp;&nbsp;history</i></md-icon>
+          <p>History</p>
+           </md-list-item>
+           <md-divider></md-divider>
+
+          
+           </div>
+
+
+
+
+          <!-- <md-list-item  ng-click="vm.getload('Lets pick up a brain fight')"
+          ui-sref="challenge"> 
+             <md-icon>
+          <i class="material-icons" style="color:white">supervisor_account</i></md-icon>
+          <p>Challenge  <span class="badge badge-error">{{vm.challengeCount || 7}}</span></p>
+           </md-list-item>
+          
+           <md-divider></md-divider> -->
+
+
+
+
+
+
+           
+
+            <md-list-item  ng-click="vm.getload('Checking your performance')"
+          ui-sref="performance"> 
+             <md-icon>
+          <i class="material-icons" style="color:white">equalizer</i></md-icon>
+          <p>Performance </p>
+           </md-list-item>
+
+           <md-divider></md-divider>
+
+
+            <md-list-item  ng-click="vm.getload('Loading account details')"
+          ui-sref="account"> 
+             <md-icon>
+          <i class="material-icons" style="color:white">tune</i></md-icon>
+          <p>Account</p>
+           </md-list-item>
+
+           <!-- <md-list-item md-menu-origin  ng-click="vm.showmenu1()"> 
+             <md-icon>
+                     <i class="material-icons" style="color:white">fitness_center</i></md-icon>
+                     <p>Prep Test </p>
+           </md-list-item> -->
+
+   <!--  <md-menu >
+       <md-list-item md-menu-origin ng-click="$mdOpenMenu()"> 
+            <md-icon>
+         <i class="material-icons" style="color:white">fitness_center</i></md-icon>
+         <p>Prep Test </p>
+          </md-list-item>
+       <md-menu-content width="4" >
+           <md-menu-item ui-sref="preptestgeneral({'userLevel':vm.userInfo.eduLevel})">
+               <md-button>General</md-button>
+           </md-menu-item>
+           
+   
+    <md-menu-item ui-sref="preptestByInst({'userLevel':vm.userInfo.eduLevel})">
+               <md-button>By Institution</md-button>
+           </md-menu-item>
+           <md-menu-item>
+               <md-button>Context</md-button>
+           </md-menu-item>
+             <md-menu-item>
+               <md-button>Masters</md-button>
+           </md-menu-item>
+           
+           <md-menu-item>
+               <md-button>Champions</md-button>
+           </md-menu-item>
+       </md-menu-content>
+   </md-menu> -->
+    
+
+    <!-- <md-list-item ng-click="vm.openLeftMenu()">
+     <md-icon><i class="material-icons">remove_red_eye</i></md-icon>
+     <p>Monitor</p>
+    </md-list-item>
+    <md-list-item ng-click="vm.openLeftMenu()">
+     <md-icon><i class="material-icons">directions_run</i></md-icon>
+     <p>Contest</p>
+    </md-list-item> -->
+
+    <!-- <md-list-item ng-click="vm.openLeftMenu()">
+     <md-icon><i class="material-icons" style="color:white">supervisor_account</i></md-icon>
+     <p>Challenge</p>
+    </md-list-item> -->
+
+    <!-- <md-list-item ng-click="vm.openLeftMenu()">
+     <md-icon><i class="fa fa-trophy" aria-hidden="true"></i></md-icon>
+     <p>Masters</p>
+    </md-list-item> -->
+    
+
+     </md-list>
+       
+      </md-content>
+    </md-sidenav>

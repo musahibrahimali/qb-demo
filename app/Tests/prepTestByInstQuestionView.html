@@ -1,0 +1,56 @@
+<div ng-include="'app/patials/loadertmp.html'"></div>
+
+<div layout="column">
+  <section layout="row" flex>
+    
+<div ng-include="'app/patials/leftnav.html'"></div>
+
+    <md-content flex layout="column" style="">
+    <div ng-include="'app/patials/toolbar.html'"></div>
+  <!--   <div ng-include="'app/patials/toolbar.html'"></div> -->
+
+  <div layout="row" layout-padding>
+
+   
+       
+   <!-- <input placeholder="Enter year" type="text" 
+   class="textinput"ng-model="user.title">
+      -->
+
+<!-- <md-radio-group ng-model="data.group1"  layout="row" >
+
+      <md-radio-button value="Apple" class="md-primary">MCQS</md-radio-button>
+      &nbsp;
+      <md-radio-button value="Banana"> True/False </md-radio-button>
+      
+    </md-radio-group> -->
+   </div>    
+
+  <md-content   flex layout-padding  layout-align="">
+ 
+                     <!--  <md-progress-linear md-mode="indeterminate"></md-progress-linear> -->
+<md-grid-list md-cols-gt-md="4" md-cols-md="2" md-cols-sm="1" md-gutter="10px" md-row-height="1:1">
+
+    <md-grid-tile ui-sref="" ng-repeat="institutions in vm.institutions" style="background:grey; cursor:pointer;">
+    
+    <img ng-src="{{institutions.image}}" alt="">
+      <md-grid-tile-footer>
+        <h3 class="md-body-2">{{institutions.title}}</h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+
+
+   </md-grid-list>
+    
+
+
+
+
+
+  </md-content>
+
+    </md-content>
+    
+  </section>
+</div>
+

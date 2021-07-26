@@ -1,0 +1,138 @@
+
+<div ng-include="'app/patials/loadertmp.html'"></div>
+
+<md-content layout="column" id="top">
+  <section layout="row" flex>
+
+
+<div ng-include="'app/patials/leftnav.html'"></div>
+
+    <md-content  flex layout="column" >
+
+    <div ng-include="'app/patials/toolbar.html'"></div>
+  <!--   <div ng-include="'app/patials/toolbar.html'"></div> -->
+
+  
+
+  <h1 class="md-headline" style="color:#37474F;margin:15px;"> Pending Challenge Requests. </h1>
+    
+<md-content layout="row" layout-padding>
+      
+           
+  
+     
+<md-content  flex flex-gt-sm="70"  class="homecard">
+
+   
+<div layout="row" class="homecard" ng-repeat="challenger in vm.challengeRecieved">
+
+<div  layout="row" layout-align="center center">
+  
+<user-avatar><img ng-src="{{vm.baseUrl+challenger.profilePic}}" style="height:100px; width:100px;" alt="">
+
+          </user-avatar>
+</div>
+
+<div flex layout="column" layout-gt-sm="row" layout-align="start center" layout-padding >
+<p style="margin:0px;"> {{challenger.firstName}} {{challenger.lastName}}
+<span ng-if="challenger.firstName == vm.userInfo.firstName && 
+challenger.lastName == vm.userInfo.lastName"> (You)</span>
+<br> <span style="color:#777;">from St {{challenger.instition}} 
+<span ng-if="challenger.firstName != vm.userInfo.firstName && 
+challenger.lastName != vm.userInfo.lastName">sent you a challenge request </span> 
+<i class="md-caption" am-time-ago="challenger.dateSent | amParse:'YYYY-MM-DD HH:mm:ss'"></i>
+
+</span>
+<br>
+
+{{challenger.subject}} | {{challenger.numOfquestions}} qts | {{challenger.time}}min | expires on {{challenger.expiringDate}}
+
+</p>
+
+<div hide-gt-sm layout="row" style="margin:0px;"> 
+
+<button type="button" class="btn btn-success"
+ ng-click="vm.doChallenge(challenger.id,challenger.subject,challenger.time,challenger.numOfquestions)" 
+ style="margin-right:10px;" >
+
+<md-icon class="material-icons" aria-label="description">
+<i class="material-icons">thumb_up</i></md-icon>
+
+</button>
+<button  ng-click="vm.declineChallenge(challenger.id,$index)" type="button" class="btn btn-warning" >
+
+<md-icon class="material-icons" aria-label="description">
+<i class="material-icons">thumb_down</i></md-icon></button>
+
+ </div>
+
+ <div hide show-gt-sm layout="row"> 
+
+<button type="button" class="btn btn-success"  
+ ng-click="vm.doChallenge(challenger.id,challenger.subject,challenger.time,30)" style="margin-right:10px;">
+
+<md-icon class="material-icons" aria-label="description">
+<i class="material-icons">thumb_up</i></md-icon> Accept
+
+</button>
+<button ng-click="vm.declineChallenge(challenger.id,$index)" type="button" class="btn btn-warning">
+
+<md-icon class="material-icons" aria-label="description">
+<i class="material-icons">thumb_down</i></md-icon>
+ Decline</button>
+
+ </div>
+  
+
+</div>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</md-content>
+
+<md-content hide show-gt-sm flex="30">
+
+<div layout="column" layout-align="center center">
+  
+  <img src="images/addd.png" alt="">
+  <br>
+  <br>
+  <img src="images/add.jpg" alt="">
+</div>
+
+
+
+</md-content>
+
+ 
+
+
+
+
+  </md-content>
+
+
+
+
+
+
+
+
+    </md-content>
+    
+  </section>
+</md-content>
+

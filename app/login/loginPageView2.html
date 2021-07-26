@@ -1,0 +1,192 @@
+
+<div layout="column">
+  
+    <!-- <div class="md-flex">
+      <h2 style="float:left">adfddsds</h2>
+      <h2 style="float:right"> asfd</h2>
+    </div> -->
+
+ <div layout="row" layout-padding class="bg-dark-blue nav-dark" layout-align="space-between center">
+<div>
+    <md-button>QuestionBox</md-button>
+    <!-- <md-button>Item 1</md-button>
+    <md-button>Item 2</md-button>
+    <md-menu>
+        <md-button md-menu-origin ng-click="$mdOpenMenu()">Help</md-button>
+        <md-menu-content width="2">
+            <md-menu-item>
+                <md-button>Help</md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button>About</md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu> -->
+</div>
+<div class="nav-buttons" style="color:#00838F">
+    <md-button  ng-disabled="vm.formToggle" ng-click="vm.toggle()"><span class="md-body-2"> Login</span></md-button>
+    <md-button ng-disabled="!vm.formToggle" ng-click="vm.toggle()"><span class="md-body-2">Sign Up</span></md-button>
+
+    
+    
+</div>
+ </div> 
+<md-progress-linear ng-show="vm.progress" md-mode="indeterminate"></md-progress-linear>
+<div id="container" style="">
+
+<div id="container-mask" 
+style="background-color:rgba(0,150,136,.5);height:100%;">
+  
+
+  
+  <div layout="column" layout-gt-sm="row" style="">
+  	
+  
+   <div flex="70">
+  	
+  <h1 class="md-display-3 valign" style="color:white;font-weight:300; 
+  text-align:center;">Play , Learn and Win</h1>
+  <!--  <h1 class="md-display-3 valign" style="color:white;font-weight:300; 
+    text-align:center;">Play , Learn and Win</h1>
+    	 -->
+  </div>
+  
+  <div  flex="30" >
+
+         <div layout='column' layout-padding  layout-align="center" 
+         style="">
+		 
+
+
+		 <div  id="signin" class="nga-default nga-slide-up"
+		  ng-show="vm.formToggle" 
+		 style="background:rgba(255,255,255,.8); margin-top:30px;
+		  padding-top:20px;">
+		 <br>
+   <h4 style="color:#00838F; text-align:center;" class="md-body-1">  
+   {{vm.loginResponse}} </h4>
+
+		   <form action="">	
+		     <md-input-container class="md-icon-float md-block loginInput">
+		        <label style="margin-top:30px;">Email</label>
+		        <md-icon><i class="material-icons">email</i></md-icon>
+		        <input ng-model="vm.userData.email"  type="text" style="">
+		      </md-input-container>
+
+
+		      <md-input-container class="md-icon-float md-block loginInput" >
+		        <label>Password</label>
+		         <md-icon><i class="material-icons">lock_outline</i></md-icon>
+		        <input ng-model="vm.userData.password" type="password" >
+		      </md-input-container>   
+
+		    <md-button ng-click="vm.loginUser()" style="width:100%; color:white;
+		     margin:0 auto;" class="md-primary  md-hue-2 md-raised"> 
+		   <h1 class="md-body-2">Login</h1></md-button>
+		</form>
+
+
+		   <h1 class="md-body-2" style="text-align:center; margin:30px 0;">or</h1>
+             <div layout="row" md-theme="blue" layout-align="center">
+
+      <md-button  class="md-fab md-primary md-hue-2 md-raised" 
+      style="font-size:30px;">
+       <i class="fa fa-facebook"></i>
+      </md-button>
+
+      <md-button  class="md-fab md-primary md-raised" style="font-size:30px;">
+       <i class="fa fa-twitter"></i>
+      </md-button>
+	</div>
+		
+
+		</div>
+
+
+
+
+
+
+
+<div  id="signup" class="nga-default nga-slide-up" 
+ ng-show="!vm.formToggle" 
+style="background:rgba(255,255,255,.8); margin-top:30px;
+		  padding-top:20px;">
+
+		 <br>
+
+		   <form action="">	
+		     <md-input-container class="md-icon-float md-block loginInput">
+		        <label style="margin-top:30px;">Full Name</label>
+		         <md-icon><i class="material-icons">person</i></md-icon>
+		        <input ng-model="vm.username"  type="text" style="">
+		      </md-input-container>
+
+		      <md-input-container class="md-icon-float md-block loginInput">
+		        <label style="margin-top:30px;">Email</label>
+		         <md-icon><i class="material-icons">email</i></md-icon>
+		        <input ng-model="vm.username"  type="email" style="">
+		      </md-input-container>
+
+
+		       <md-input-container class="md-icon-float md-block loginInput">
+		        <label>Password</label>
+		         <md-icon><i class="material-icons">lock</i></md-icon>
+		        <input ng-model="vm.password" type="password" >
+		      </md-input-container>
+
+		       <md-input-container class="md-icon-float md-block loginInput">
+		        <label>Confirm Password</label>
+		         <md-icon><i class="material-icons">lock_outline</i></md-icon>
+		        <input ng-model="vm.password" type="password" >
+		      </md-input-container>
+
+		   <md-button ui-sref="userhome"style="width:100%; color:white;
+		     margin:0 auto;" class="md-primary md-hue-2  md-raised"> 
+		   <h1 class="md-body-2">Sign Up</h1></md-button>
+		</form>
+
+
+		   <h1 class="md-body-2" style="text-align:center; margin:30px 0;">or</h1>
+             <div layout="row" md-theme="blue" layout-align="center">
+
+      <md-button  class="md-fab md-primary md-hue-2 md-raised" 
+      style="font-size:30px;">
+       <i class="fa fa-facebook"></i>
+      </md-button>
+
+      <md-button  class="md-fab md-primary md-raised" style="font-size:30px;">
+       <i class="fa fa-twitter"></i>
+      </md-button>
+	</div>
+		
+
+		</div> <!-- end signup form -->
+
+
+
+
+
+
+  </div>
+  
+  </div> <!-- end form container -->
+    
+  
+
+  </div> <!-- end of row -->
+
+</div> <!-- end of mask -->
+
+
+  <!-- <div  flex style="border:solid; height:700px;">
+  
+  
+  	
+  </div> -->
+
+
+
+</div> <!-- end of container -->
+
+</div>

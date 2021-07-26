@@ -1,0 +1,409 @@
+<span id="modaltop"> &nbsp;</span>
+<md-content ng-show="ctrl.parent.menuButton" layout="coloumn" layout-gt-sm="row" layout-align="center center"  layout-padding layout-wrap>
+
+
+<button ng-click="ctrl.parent.mathTest()" style="height:70px;width:200px;background:#80BED7;border:none;color:white; 
+z-index:5; margin:20px;cursor:pointer;">
+        <h1 class="md-title">Maths</h1></button>
+
+ <button ng-click="ctrl.parent.scienceTest()" style="height:70px;width:200px;background:#EC6523;border:none;color:white; 
+ z-index:5; margin:20px;cursor:pointer;">
+        <h1 class="md-title">Science</h1></button>
+  
+</md-content> 
+
+
+
+
+
+
+
+<div   ng-show="ctrl.parent.math">
+
+<div  hide  show-gt-sm  style="padding:10px;width:700px;min-width:700px;">
+
+<div layout="column" layout-padding style="margin-top:15px;"> 
+
+
+ <md-icon style="color:#80BED7;" >  
+    
+<i class="material-icons md-48">import_contacts</i>
+
+      </md-icon>
+
+<h1 style="color:#263C49;text-align:center">Let's try some maths.</h1>
+
+   <md-card layout-padding ng-repeat="question in ctrl.parent.maths"> 
+   
+   <h3 style="margin:0px;" class="md-body-2">Question: {{$index + 1}}</h3>
+   
+      
+    <p style="color:#777;">{{question.question}}</p>
+     
+    <md-radio-group  ng-model="question.choice" style="color:#777;">
+   
+     <md-radio-button  class="md-primary" value="A">
+     <span style="color:black;">A &nbsp;&nbsp;</span>{{question.A}} </md-radio-button>
+     <md-radio-button class="md-primary" value="B">
+     <span style="color:black;">B &nbsp;&nbsp;</span>{{question.B}} </md-radio-button>
+     <md-radio-button   class="md-primary" value="C">
+     <span style="color:black;">C &nbsp;&nbsp;</span>{{question.C}} </md-radio-button> 
+     <md-radio-button   class="md-primary" value="D">
+     <span style="color:black;">D &nbsp;&nbsp;</span>{{question.D}} </md-radio-button> 
+    </md-radio-group>
+   
+    </md-card>
+   
+     
+
+
+
+<div layout="row" layout-align="center center">
+
+ <button  ng-click="ctrl.parent.doMarking('maths')" style="height:70px;width:100px;background:#449D44;
+border:none;color:white;cursor:pointer;">
+        <h1 class="md-title">Done</h1></button> </div>
+
+
+
+ 
+
+   </div>
+
+</div>
+
+
+<div   hide-gt-sm >
+
+<div layout="column" layout-padding style="margin-top:15px;"> 
+
+
+ <md-icon style="color:#80BED7;" >  
+    
+<i class="material-icons md-48">import_contacts</i>
+
+      </md-icon>
+
+<h1 style="color:#263C49;text-align:center">Let's try some maths.</h1>
+
+   <md-card layout-padding ng-repeat="question in ctrl.parent.maths"> 
+   
+   <h3 style="margin:0px;" class="md-body-2">Question: {{$index + 1}}</h3>
+   
+      
+    <p style="color:#777;">{{question.question}}</p>
+     
+    <md-radio-group  ng-model="question.choice" style="color:#777;">
+   
+     <md-radio-button  class="md-primary" value="A">
+     <span style="color:black;">A &nbsp;&nbsp;</span>{{question.A}} </md-radio-button>
+     <md-radio-button class="md-primary" value="B">
+     <span style="color:black;">B &nbsp;&nbsp;</span>{{question.B}} </md-radio-button>
+     <md-radio-button   class="md-primary" value="C">
+     <span style="color:black;">C &nbsp;&nbsp;</span>{{question.C}} </md-radio-button> 
+     <md-radio-button   class="md-primary" value="D">
+     <span style="color:black;">D &nbsp;&nbsp;</span>{{question.D}} </md-radio-button> 
+    </md-radio-group>
+   
+    </md-card>
+   
+     
+
+
+
+<div layout="row" layout-align="center center">
+
+ <button  ng-click="ctrl.parent.doMarking('maths')" style="height:70px;width:100px;background:#449D44;
+border:none;color:white;cursor:pointer;">
+        <h1 class="md-title">Done</h1></button> </div>
+
+
+
+ 
+
+   </div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<div   ng-show="ctrl.parent.science">
+
+
+<div hide  show-gt-sm style="padding:10px;width:700px;">
+  
+  <div layout="column" layout-padding style="margin-top:15px;"> 
+
+<md-icon style="color:#80BED7;" >  
+    
+<i class="material-icons md-48">lightbulb_outline</i>
+
+      </md-icon>
+  
+<h1 style="color:#263C49;text-align:center">How about some science?</h1>
+     
+
+   <md-card layout-padding ng-repeat="question in ctrl.parent.interScience"> 
+   
+   <h3 style="margin:0px;" class="md-body-2">Question: {{$index + 1}}</h3>
+   
+      
+    <p style="color:#777;">{{question.question}}</p>
+     
+    <md-radio-group  ng-model="question.choice" style="color:#777;">
+   
+     <md-radio-button  class="md-primary" value="A">
+     <span style="color:black;">A &nbsp;&nbsp;</span>{{question.A}} </md-radio-button>
+     <md-radio-button class="md-primary" value="B">
+     <span style="color:black;">B &nbsp;&nbsp;</span>{{question.B}} </md-radio-button>
+     <md-radio-button   class="md-primary" value="C">
+     <span style="color:black;">C &nbsp;&nbsp;</span>{{question.C}} </md-radio-button> 
+     <md-radio-button   class="md-primary" value="D">
+     <span style="color:black;">D &nbsp;&nbsp;</span>{{question.D}} </md-radio-button> 
+   
+      
+    </md-radio-group>
+   
+    </md-card>
+   
+    
+
+
+
+
+<div layout="row" layout-align="center center">
+
+ <button   ng-click="ctrl.parent.doMarking('science')" 
+ style="height:70px;width:100px;background:#449D44;
+border:none;color:white;cursor:pointer;">
+        <h1 class="md-title">Done</h1></button> </div>
+
+ 
+
+   </div>
+</div>
+
+
+
+<div hide-gt-sm>
+  
+  <div layout="column" layout-padding style="margin-top:15px;"> 
+
+<md-icon style="color:#80BED7;" >  
+    
+<i class="material-icons md-48">lightbulb_outline</i>
+
+      </md-icon>
+  
+<h1 style="color:#263C49;text-align:center">How about some science?</h1>
+     
+
+   <md-card layout-padding ng-repeat="question in ctrl.parent.interScience"> 
+   
+   <h3 style="margin:0px;" class="md-body-2">Question: {{$index + 1}}</h3>
+   
+      
+    <p style="color:#777;">{{question.question}}</p>
+     
+    <md-radio-group  ng-model="question.choice" style="color:#777;">
+   
+     <md-radio-button  class="md-primary" value="A">
+     <span style="color:black;">A &nbsp;&nbsp;</span>{{question.A}} </md-radio-button>
+     <md-radio-button class="md-primary" value="B">
+     <span style="color:black;">B &nbsp;&nbsp;</span>{{question.B}} </md-radio-button>
+     <md-radio-button   class="md-primary" value="C">
+     <span style="color:black;">C &nbsp;&nbsp;</span>{{question.C}} </md-radio-button> 
+     <md-radio-button   class="md-primary" value="D">
+     <span style="color:black;">D &nbsp;&nbsp;</span>{{question.D}} </md-radio-button> 
+   
+      
+    </md-radio-group>
+   
+    </md-card>
+   
+    
+
+
+
+
+<div layout="row" layout-align="center center">
+
+ <button   ng-click="ctrl.parent.doMarking('science')" 
+ style="height:70px;width:100px;background:#449D44;
+border:none;color:white;cursor:pointer;">
+        <h1 class="md-title">Done</h1></button> </div>
+
+ 
+
+   </div>
+</div>
+
+</div>
+
+
+
+
+<div   ng-show="ctrl.parent.testResultView" >
+
+<div  hide  show-gt-sm  style="padding:10px;width:700px;">
+  
+<div layout="column" layout-padding style="margin-top:15px;"> 
+
+
+<md-icon style="color:#80BED7;" >  
+    
+<i class="material-icons md-48">thumb_up</i>
+
+      </md-icon>
+  
+<h1  style="color:#263C49;text-align:center;margin:0px;">{{ctrl.parent.marked.score}} out of 3</h1>
+
+
+<h1 ng-if="ctrl.parent.marked.score < 2" style="color:#263C49;text-align:center;margin:0px;padding:0px;">Hey! , it's OK. You just trying. </h1>
+
+<h1 ng-if="ctrl.parent.marked.score > 1" style="color:#263C49;text-align:center;margin:0px;padding:0px;">Well Done! you seem to be good at this</h1>
+     
+     <p ng-click="ctrl.parent.review() " style="color:#80BED7;text-align:center;
+     cursor:pointer;text-decoration:underline;margin-top:5px;" class="md-caption"> Review Test, Find out where you went wrong</p>
+
+<div layout="row" layout-align="center center">
+
+ <md-button   class="md-raised" ng-click="ctrl.parent.afterTestSignUp()" 
+ style="height:70px;background:#449D44;
+border:none;color:white;cursor:pointer;">
+        <h1 class="md-body-1">Sign Up to learn more</h1></md-button> </div>
+
+
+   <md-card ng-show="ctrl.parent.reviewAns" 
+   layout-padding ng-repeat="question in ctrl.parent.marked.markedquestion"> 
+   
+   <h3 style="margin:0px;" class="md-body-2">Question: {{$index + 1}}</h3>
+   
+      
+    <p style="color:#777;">{{question.question}}</p>
+     
+    <md-radio-group  ng-model="question.choice" style="color:#777;">
+   
+     <md-radio-button  ng-class="{'md-primary':question.status}" value="A"> 
+     <span style="color:black;">A &nbsp;&nbsp;</span>{{question.A}} </md-radio-button>
+     <md-radio-button ng-class="{'md-primary':question.status}"  value="B">
+     <span style="color:black;">B &nbsp;&nbsp;</span>{{question.B}} </md-radio-button>
+     <md-radio-button  ng-class="{'md-primary':question.status}"  value="C">
+     <span style="color:black;">C &nbsp;&nbsp;</span>{{question.C}} </md-radio-button> 
+     <md-radio-button   ng-class="{'md-primary':question.status}"  value="D">
+     <span style="color:black;">D &nbsp;&nbsp;</span>{{question.D}} </md-radio-button> 
+     
+      
+    </md-radio-group>
+
+    <div  layout="row">
+      <h1  class="md-body-2" ng-if="!question.status" style="color:#4CBB17;"> Correct Answer: {{question.answer}}</h1>
+      <div flex></div>
+      <md-icon style="color:#4CBB17;"  ng-if="question.status">  
+      <i class="material-icons">check_circle</i></md-icon>
+
+      <md-icon style="color:#FF5991;"  ng-if="!question.status">  
+      <i class="material-icons">cancel</i></md-icon>
+
+      </div>
+
+   
+    </md-card>
+   
+    
+
+
+
+
+
+
+ 
+
+   </div>
+
+</div>
+
+
+
+<div  hide-gt-sm layout="column" layout-padding style="margin-top:15px;"> 
+
+
+<md-icon style="color:#80BED7;" >  
+    
+<i class="material-icons md-48">thumb_up</i>
+
+      </md-icon>
+  
+<h1  style="color:#263C49;text-align:center;margin:0px;">{{ctrl.parent.marked.score}} out of 3</h1>
+
+
+<h1 ng-if="ctrl.parent.marked.score < 2" style="color:#263C49;text-align:center;margin:0px;padding:0px;">Hey! , it's OK. You just trying. </h1>
+
+<h1 ng-if="ctrl.parent.marked.score > 1" style="color:#263C49;text-align:center;margin:0px;padding:0px;">Well Done! you seem to be good at this</h1>
+     
+     <p ng-click="ctrl.parent.review() " style="color:#80BED7;text-align:center;
+     cursor:pointer;text-decoration:underline;margin-top:5px;" class="md-caption"> Review Test, Find out where you went wrong</p>
+
+<div layout="row" layout-align="center center">
+
+ <md-button   class="md-raised" ng-click="ctrl.parent.afterTestSignUp()" 
+ style="height:70px;background:#449D44;
+border:none;color:white;cursor:pointer;">
+        <h1 class="md-body-1">Sign Up to learn more</h1></md-button> </div>
+
+
+   <md-card ng-show="ctrl.parent.reviewAns" 
+   layout-padding ng-repeat="question in ctrl.parent.marked.markedquestion"> 
+   
+   <h3 style="margin:0px;" class="md-body-2">Question: {{$index + 1}}</h3>
+   
+      
+    <p style="color:#777;">{{question.question}}</p>
+     
+    <md-radio-group  ng-model="question.choice" style="color:#777;">
+   
+     <md-radio-button  ng-class="{'md-primary':question.status}" value="A"> 
+     <span style="color:black;">A &nbsp;&nbsp;</span>{{question.A}} </md-radio-button>
+     <md-radio-button ng-class="{'md-primary':question.status}"  value="B">
+     <span style="color:black;">B &nbsp;&nbsp;</span>{{question.B}} </md-radio-button>
+     <md-radio-button  ng-class="{'md-primary':question.status}"  value="C">
+     <span style="color:black;">C &nbsp;&nbsp;</span>{{question.C}} </md-radio-button> 
+     <md-radio-button   ng-class="{'md-primary':question.status}"  value="D">
+     <span style="color:black;">D &nbsp;&nbsp;</span>{{question.D}} </md-radio-button> 
+     
+      
+    </md-radio-group>
+
+    <div  layout="row">
+      <h1  class="md-body-2" ng-if="!question.status" style="color:#4CBB17;"> Correct Answer: {{question.answer}}</h1>
+      <div flex></div>
+      <md-icon style="color:#4CBB17;"  ng-if="question.status">  
+      <i class="material-icons">check_circle</i></md-icon>
+
+      <md-icon style="color:#FF5991;"  ng-if="!question.status">  
+      <i class="material-icons">cancel</i></md-icon>
+
+      </div>
+
+   
+    </md-card>
+   
+    
+
+
+
+
+
+
+ 
+
+   </div>
+
+</div>
+
+

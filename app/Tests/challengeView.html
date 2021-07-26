@@ -1,0 +1,258 @@
+
+<div ng-include="'app/patials/loadertmp.html'"></div>
+
+<md-content layout="column" id="top">
+  <section layout="row" flex>
+
+
+<div ng-include="'app/patials/leftnav.html'"></div>
+
+    <md-content  flex layout="column" >
+
+    <div ng-include="'app/patials/toolbar.html'"></div>
+  <!--   <div ng-include="'app/patials/toolbar.html'"></div> -->
+
+  
+
+  <md-content    style="">
+    
+ <md-content  layout-padding>
+
+ <h1 class="md-headline" style="color:#37474F;">Creat New Challenge </h1>
+         <md-divider style="margin:0px padding:0px;"></md-divider>  
+
+
+<div  layout="column" layout-gt-sm="row" layout-align="center center">
+
+     <!-- <md-input-container class="md-icon-float md-block loginInput">
+            <label style="margin-top:30px;">Subject Name</label>
+            <md-icon><i class="material-icons">description</i></md-icon>
+            <input ng-model="vm.challengInfo.subject"  type="text" style="">
+          </md-input-container>  -->
+
+          <md-input-container class="md-icon-float md-block loginInput">
+        <label style="margin-top:30px;" >Subject Name</label>
+
+          <md-icon><i class="material-icons">description</i></md-icon>
+        <md-select ng-model="vm.challengInfo.subject" >
+          <md-option  ng-value="subject.name" ng-repeat="subject in vm.subjects" md-offset="0 50" >
+          {{subject.name}}
+          </md-option>
+          
+        </md-select>
+      </md-input-container>
+
+          <md-input-container class="md-icon-float md-block loginInput">
+            <label style="margin-top:50px;">Number of Questions</label>
+            <md-icon><i class="material-icons">format_list_numbered</i></md-icon>
+            <input ng-model="vm.challengInfo.numOfquestions"  type="text" style="">
+          </md-input-container> 
+
+          <md-input-container class="md-icon-float md-block loginInput">
+            <label style="margin-top:50px;">Time</label>
+            <md-icon><i class="material-icons">alarm</i></md-icon>
+            <input ng-model="vm.challengInfo.time"  type="number" min="0" style="">
+          </md-input-container> 
+
+          
+    <div class="md-icon-float md-block loginInput" style="margin-top:0px;height:50px;">
+    <md-datepicker  ng-model="vm.challengInfo.expiringDate" md-placeholder="Expiring date">
+    </div>
+
+
+</div>
+
+<p class="textcenter">{{vm.addedUsers}} challengers added</p>
+
+<md-content layout="row" layout-align="center center" layout-padding layout-wrap>
+   
+
+    <md-contact-chips
+        ng-model="vm.contacts" 
+        md-contact-name="firstName"
+        md-contact-image="profilePic"
+        md-contact-email="email"
+        placeholder="No challenger added"
+        secondary-placeholder="add more"
+
+
+        >
+    </md-contact-chips>
+
+
+     &nbsp;  &nbsp;<button type="button" ng-click="vm.sendRequest()"  class="btn btn-success">Creat Challenge</button>
+
+   
+</md-content>
+
+  <md-divider ></md-divider>
+
+  <md-content class="searchbar" style="">
+  <md-content layout="row"    layout-align="center center">
+         <md-input-container flex="90" md-no-float class="md-block" margin>
+       <md-icon> <i class="material-icons">search</i></md-icon>
+        <input ng-model="vm.search" type="text" placeholder="Search for Qboxers">
+        </md-input-container>
+
+       &nbsp;  &nbsp;<button type="button"  class="btn btn-primary"> Search</button>
+
+        <!-- <md-button  ng-show="!vm.toggleSubjectView" ng-click="vm.subjectToggle()" 
+        class="md-icon-button" aria-label="More">
+        
+        <md-icon> <i class="material-icons">view_comfy</i></md-icon>
+              </md-button> -->
+
+      <!--  <md-button  ng-show="vm.toggleSubjectView" ng-click="vm.subjectToggle()" class="md-icon-button" aria-label="More">
+       
+       <md-icon > 
+       <i  class="material-icons">format_list_bulleted</i>
+       </md-icon>
+            </md-button> -->
+
+
+   </md-content>
+
+  </md-content>
+
+  <!-- <md-content  style="height:70px;">
+     
+  </md-content> -->
+
+
+
+<md-content flex layout-padding layout-wrap>
+  
+
+ <md-list class="fixedRows" hide show-gt-sm>
+      <md-subheader class="md-no-sticky">Click to Send Challenge Request to a Qboxer</md-subheader>
+     <md-divider ></md-divider>
+
+     <p class="textcenter md-caption">People in Your School.</p>
+      <md-divider md-inset></md-divider>
+
+      <md-list-item ng-if="contact.firstName != vm.userInfo.firstName && 
+         contact.lastName != vm.userInfo.lastName"
+  class="md-2-line challengers nga-default nga-stagger nga-slide-up" 
+      ng-repeat="contact in vm.peopleInSchool track by $index">
+    
+        <img ng-src="{{vm.baseUrl+contact.profilePic}}" class="md-avatar" alt="{{contact.firstName}}" />
+        <div class="md-list-item-text compact">
+          <h3>{{contact.firstName}} {{contact.lastName}}</h3>
+          <p>{{contact.name}}  
+
+          <button type="button" ng-click="vm.addUser(contact,$index,1)"  class="btn btn-primary btn-sm">
+          <md-icon>
+          <i class="material-icons" style="color:white">supervisor_account</i></md-icon></button>
+          </p>
+
+        </div>
+     
+      </md-list-item>
+
+
+
+
+
+
+
+
+     
+     <p class="textcenter md-caption" style="margin:50px;">...</p>
+
+      <md-divider md-inset></md-divider>
+      <p class="textcenter md-caption">People in Other Schools.</p>
+      <md-divider md-inset></md-divider>
+
+      <md-list-item  class="md-2-line challengers nga-default nga-stagger nga-slide-up" ng-repeat="contact in vm.peopleOutSchool track by $index">
+        <img ng-src="{{vm.baseUrl+contact.profilePic}}" class="md-avatar" alt="{{contact.firstName}}" />
+        <div class="md-list-item-text compact">
+          <h3>{{contact.firstName}} {{contact.lastName}}</h3>
+          <p>{{contact.name}}  
+          <button type="button" ng-click="vm.addUser(contact,$index,2)"  class="btn btn-primary btn-sm">
+          <md-icon>
+          <i class="material-icons" style="color:white">supervisor_account</i></md-icon></button></p>
+
+        </div>
+      </md-list-item>
+
+
+
+
+
+  </md-list> 
+
+
+
+
+
+
+  <md-list hide-gt-sm >
+      <md-subheader class="md-no-sticky">Send Challenge Request to a Qboxer</md-subheader>
+     <md-divider ></md-divider>
+      <p class="textcenter">People in Your School.</p>
+      <md-divider md-inset></md-divider>
+
+      <md-list-item ng-if="contact.firstName != vm.userInfo.firstName && 
+         contact.lastName != vm.userInfo.lastName"
+         class="md-2-line nga-default nga-stagger nga-slide-up" ng-repeat="contact in vm.peopleInSchool track by $index">
+        <img ng-src="{{vm.baseUrl+contact.profilePic}}" class="md-avatar" alt="{{contact.firstName}}" />
+        <div class="md-list-item-text compact">
+          <h3>{{contact.firstName}} {{contact.lastName}}</h3>
+          <p>{{contact.name}}  
+
+          <button ng-click="vm.addUser(contact,$index,1)"  type="button" class="btn btn-primary btn-sm">
+          <md-icon>
+          <i class="material-icons" style="color:white">supervisor_account</i></md-icon></button></p>
+
+        </div>
+      </md-list-item>
+
+
+
+
+
+       <p class="textcenter md-caption" style="margin:20px;">...</p>
+      <md-divider md-inset></md-divider>
+      <p class="textcenter md-caption">People in Other Schools.</p>
+      <md-divider md-inset></md-divider>
+
+      <md-list-item class="md-2-line nga-default nga-stagger nga-slide-up" ng-repeat="contact in vm.peopleOutSchool track by $index">
+        <img ng-src="{{vm.baseUrl+contact.profilePic}}" class="md-avatar" alt="{{contact.firstName}}" />
+        <div class="md-list-item-text compact">
+          <h3>{{contact.firstName}} {{contact.lastName}}</h3>
+          <p>{{contact.name}}   
+          <button ng-click="vm.addUser(contact,$index,2)"  type="button" class="btn btn-primary btn-sm">
+          <md-icon>
+          <i class="material-icons" style="color:white">supervisor_account</i></md-icon></button></p>
+
+        </div>
+      </md-list-item>
+  </md-list>
+
+
+     
+
+</md-content>
+
+   
+
+<div layout="row" layout-align="center center" >
+
+ <p md-whiteframe="5" class="textcenter md-body-1" style="width:100px;height:100px;  margin:50px;border:solid; 
+ border-width:1px;border-radius:50%;padding:10px;">
+ <i class="material-icons md-48" >replay</i> <br>
+  load more students </p>
+</div>
+    
+
+</md-content>
+
+
+
+  </md-content>
+
+    </md-content>
+    
+  </section>
+</md-content>
+

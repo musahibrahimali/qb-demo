@@ -1,0 +1,200 @@
+
+<div ng-include="'app/patials/loadertmp.html'"></div>
+
+<div layout="column" >
+  <section layout="row" flex>
+    
+<div ng-include="'app/patials/leftnav.html'"></div>
+
+    <md-content flex layout="column" >
+    <div ng-include="'app/patials/toolbar.html'"></div>
+  <!--   <div ng-include="'app/patials/toolbar.html'"></div> -->
+ 
+
+
+<div layout="row" layout-padding style="margin-top:15px;"> 
+
+
+  <md-content   flex style="">
+
+   <md-card layout-align="start center">
+<!-- #03A9F4 -->
+<span ng-if="vm.resultCompliment == 1">
+ <h1   style="font-size:50px;color:#03A9F4;text-align:center;"> Nice Try.</h1>
+
+  <h1  style="color:#45687c; text-align:center;margin:0px;">Score : {{vm.score}} out of {{vm.total}}</h1>
+
+ <div layout="row" layout-align="center center">
+
+
+    
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+
+  </div>
+
+ </span>
+<span ng-if="vm.resultCompliment == 2" >
+ <h1  style="font-size:50px;color:#03A9F4;text-align:center;"> Nice! Keep it up.</h1>
+  <h1  style="color:#45687c; text-align:center;margin:0px;">Score : {{vm.score}} out of {{vm.total}}</h1>
+
+ <div layout="row" layout-align="center center">
+
+
+    <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+
+  </div>
+
+ </span>
+
+<span ng-if="vm.resultCompliment == 3">
+ <h1    style="font-size:50px;color:#03A9F4;text-align:center;">Well Done!</h1>
+  <h1  style="color:#45687c; text-align:center;margin:0px;">Score : {{vm.score}} out of {{vm.total}}</h1>
+
+ <div layout="row" layout-align="center center">
+
+
+    <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+
+  </div>
+
+ </span>
+
+<span  ng-if="vm.resultCompliment == 4">
+ <h1   style="font-size:50px;color:#03A9F4;text-align:center;">Good job!</h1>
+  <h1  style="color:#45687c; text-align:center;margin:0px;">Score : {{vm.score}} out of {{vm.total}}</h1>
+
+ <div layout="row" layout-align="center center">
+
+
+    <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+
+  </div>
+
+ </span>
+
+<span ng-if="vm.resultCompliment == 5"> 
+<h1    style="font-size:50px;color:#03A9F4;text-align:center;">Fantastic!</h1>
+ <h1  style="color:#45687c; text-align:center;margin:0px;">Score : {{vm.score}} out of {{vm.total}}</h1>
+
+<div layout="row" layout-align="center center">
+
+
+    <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+    <img src="images/graystar1.png" alt="star" style="width:50px;height:50px;margin:5px;">
+
+  </div>
+
+</span>
+
+<span ng-if="vm.resultCompliment == 6">
+ <h1    style="font-size:50px;color:#03A9F4;text-align:center;"> You are awesome!</h1>
+  <h1  style="color:#45687c; text-align:center;margin:0px;">Score : {{vm.score}} out of {{vm.total}}</h1>
+ <div layout="row" layout-align="center center">
+
+
+   <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+   <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+   <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+   <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+   <img src="images/goldstar.png" alt="star" style="width:50px;height:50px;margin:5px;">
+
+ </div>
+
+ </span>
+
+
+
+  </md-card>
+  
+  
+  <!-- <md-content layout="row" style="position:fixed; top:30px;right:15px;">
+    
+     <div flex></div>
+     <md-icon > 
+     <i class="material-icons">alarm</i></md-icon>
+    &nbsp;
+     <h1 class="md-display-2">
+     {{vm.hour}}:{{vm.min}}:{{vm.sec}} </h1> 
+      <div flex></div>
+   
+  </md-content> -->
+                     <!-- 
+  <md-progress-linear md-mode="indeterminate"></md-progress-linear> -->
+
+    
+
+   <md-card layout-padding ng-repeat="question in vm.questions"> 
+
+   <h3 style="margin:0px;" class="md-body-2">Question: {{question.number}}</h3>
+   <div style="color:#777;" ng-bind-html="vm.sanitize(question.exam_question)"></div>
+
+  
+    <md-radio-group    ng-model="vm.questions[$index].choice" style="color:#777;">
+      <!-- <md-radio-button ng-class="{'md-primary':vm.questions[$index].status}" value="A">{{question.A}} </md-radio-button>
+      <md-radio-button ng-class="{'md-primary':vm.questions[$index].status}" value="B">{{question.B}} </md-radio-button>
+      <md-radio-button ng-class="{'md-primary':vm.questions[$index].status}" value="C">{{question.C}} </md-radio-button> -->
+
+  <!-- <md-radio-button ng-repeat="question." ng-class="{'md-primary':vm.questions[$index].status}" value="D">{{question.D}} </md-radio-button> -->
+
+   <md-radio-button  ng-disabled="true" ng-repeat="posAns in question.options"
+    ng-class="{'md-primary':vm.questions[$parent.$index].status}" value="{{posAns.label}}">
+       <span style="color:black;">{{posAns.label}}</span> &nbsp;&nbsp;
+       <span style="color:#777;">{{posAns.posAnswer}}</span> </md-radio-button>
+      
+    </md-radio-group>
+    
+     <div  layout="row">
+      <h1  class="md-body-2" ng-if="!vm.questions[$index].status" style="color:#4CBB17;"> Correct Answer: {{question.answer}}</h1>
+      <div flex></div>
+      <md-icon style="color:#4CBB17;"  ng-if="vm.questions[$index].status">  
+      <i class="material-icons">check_circle</i></md-icon>
+
+      <md-icon style="color:#FF5991;"  ng-if="!vm.questions[$index].status">  
+      <i class="material-icons">cancel</i></md-icon>
+
+      </div>
+    </md-card>
+
+    
+
+
+
+
+
+
+  </md-content>
+
+  <!--  <md-content   flex="30" style="border:solid">
+                    <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+  
+  afsdfasd
+  
+    </md-content> -->
+
+
+</div>
+
+    </md-content>
+    
+  </section>
+</div>
+

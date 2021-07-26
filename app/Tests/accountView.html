@@ -1,0 +1,320 @@
+
+<div ng-include="'app/patials/loadertmp.html'"></div>
+
+<div layout="column" id="top">
+  <section layout="row" flex>
+    
+
+<div ng-include="'app/patials/leftnav.html'"></div>
+
+    <md-content flex layout="column" class="viewContainer">
+
+    <div ng-include="'app/patials/toolbar.html'"></div>
+  <!--   <div ng-include="'app/patials/toolbar.html'"></div> -->
+  <md-content style=""  md-whiteframe="6" >
+    
+  
+                   <!-- 
+  <md-progress-linear md-mode="indeterminate"></md-progress-linear> -->
+
+
+<md-content layout="column" layout-padding   layout-align="center center">
+    
+
+
+  <div  layout="column" layout-gt-sm="row" layout-align="center center"  style="width:100%;">
+
+
+
+  
+    <h1 class="md-headline" style="color:#37474F;">
+    <md-icon><i class="material-icons">tune</i>  </md-icon>Account Details </h1> 
+
+
+    <div flex></div>
+    
+   
+
+  <!--   <div>
+  
+  <md-icon style="color:blue;"> 
+   <i class="material-icons" style="">mode_edit</i> </md-icon> </div>  -->
+
+ 
+
+<!--  <div style="margin-top:15px;">
+   <md-button  ng-show="!vm.edit" ng-click="vm.doEdit()" class="md-raised" style="color:white;background:#80bed7;">
+
+   <h4 style="color:white;margin:0px; vertical-align:middle;font-size:14px;" class="md-subhead">
+<md-icon style="color:white;"> 
+<i class="material-icons" style="">mode_edit</i> </md-icon>
+  </h4> </md-button>
+
+
+<md-button ng-click="vm.doCancel()" ng-show="vm.edit" class="md-raised" style="color:white;background:#d64040;">
+
+   <h4 style="color:white;margin:0px; vertical-align:middle;" class="md-subhead">
+<md-icon style="color:white;"> 
+<i class="material-icons">cancel</i> </md-icon>
+  </h4> </md-button>
+
+
+  <md-button ng-click="vm.doSave()" ng-show="vm.edit" class="md-raised" style="color:white;background:#449D44;">
+
+   <h4 style="color:white;margin:0px; vertical-align:middle;" class="md-subhead">
+<md-icon style="color:white;"> 
+<i class="material-icons">save</i> </md-icon>
+  </h4> </md-button> 
+
+  </div> -->
+
+  </div>
+
+
+
+
+
+<div style="width:100%;margin:0px;"><md-divider inset style="margin:3px 0;"> </md-divider></div>
+
+
+
+<div ng-show="vm.imageEdit" >
+            <img style="width:180px;height:200px;" ng-src="{{(vm.picUrl || 'images/avatar.jpg')}}" />
+        </div>
+
+
+        <button style="border:none;background:none;color:#80bed7;text-decoration:underline;" 
+        ng-show="vm.imageEdit" 
+        ng-click="vm.doEditpic()">
+            Edit Picture</button>
+
+ <div ng-show="!vm.imageEdit"> 
+
+ 
+ 
+
+
+ <div layout="column" layout-align="center center">
+
+ <!-- <input type="file" nv-file-select="" uploader="uploader" />  -->
+
+ <div class="box">
+          <input type="file" id="file-1"  nv-file-select="" uploader="uploader" class="inputfile inputfile-1"  style="display: none;" />
+
+          <label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>{{vm.uploadLabel}}</span></label>
+        </div>
+ <br>
+
+<div>
+
+<button type="button" class="btn btn-primary" ng-click="vm.cancelEditpic()">
+  cancel</button>
+<button type="button" class="btn btn-success" ng-click="uploader.queue[0].upload()">
+  upload</button>
+
+  
+  </div>
+
+</div>
+  
+ 
+  
+</div>
+
+
+<!-- 
+       <form name="myForm" enctype="multipart/form-data">
+       <div>Crop Image and Upload</div>
+       <div ng-show="vm.imageEdit" >
+            <img ng-src="{{(vm.picUrl || 'images/avatar.jpg')}}" />
+        </div>
+
+        <button style="border:none;background:none;color:#80bed7;text-decoration:underline;" ng-show="vm.imageEdit" 
+        ng-click="vm.doEditpic()">
+            Edit Picture</button>
+  
+    <div  layout="column" layout-gt-sm="row">
+     
+        <div   hide show-gt-sm ng-show="!vm.imageEdit" style="color:#777;" >
+            <img ng-src="{{croppedDataUrl}}" />
+            <p style="text-align:center;">Preview</p>
+        </div>
+
+         
+
+   
+     <div>
+
+        <div ng-show="!vm.imageEdit" ngf-drop ng-model="picFile" 
+         ngf-pattern="image/*"
+             class="cropArea" style="margin-left:15px;margin-bottom:15px;">
+
+            <img-crop image="picFile  | ngfDataUrl"                 
+            result-image="croppedDataUrl"  ng-init="croppedDataUrl=''">
+            </img-crop>
+        </div>
+        
+<div layout="column" layout-align="center center">
+        
+<button style="border:none;background:none;color:#80bed7;text-decoration:underline;" 
+ ng-show="!vm.imageEdit" nv-file-select=""  uploader="uploader"  ng-model="picFile" accept="image/*">
+            Select and Crop Picture</button> &nbsp; &nbsp;&nbsp;
+        <br>
+        <div layout="row" layout-align="center center">
+        <button ng-show="!vm.imageEdit" ng-click="vm.cancelEditpic()" class="btn btn-danger">Cancel</button>  &nbsp; &nbsp;&nbsp;
+        <button ng-show="!vm.imageEdit" ng-click="upload(croppedDataUrl, picFile.name)" class="btn btn-success">Upload</button> 
+        </div>
+       <p ng-show="!vm.imageEdit" class="md-caption" style="color:#777;">Crop image and save</p>
+
+</div>
+
+      </div>
+
+    </div>        
+        <span class="progress" ng-show="progress >= 0">
+          <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+        </span>
+        <span ng-show="result">Upload Successful</span>
+        <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+    </form> -->
+
+
+
+<div style="width:70%;margin:0px;"><md-divider inset style="margin:0px;"> </md-divider></div>
+
+<div style="margin:0px;padding:0px;">
+
+    <h5 ng-show="!vm.edit" ng-click="vm.doEdit()" 
+     style="color:#37474F;margin-left:10px; margin-right:10px;cursor:pointer;margin:0px;padding:0px;">
+    <md-icon style="color:#80bed7;"><i class="material-icons">mode_edit</i> </md-icon>Edit Personal Info</h5> 
+
+<span class="md-headline" ng-click="vm.doCancel()" ng-show="vm.edit"  
+style="color:#37474F;margin-left:10px; margin-right:10px;cursor:pointer;">
+    <md-icon style="color:#d64040;"><i class="material-icons">cancel</i>  </md-icon></span> 
+
+
+<span class="md-headline" ng-click="vm.doSave()" ng-show="vm.edit"  
+style="color:#37474F;margin-left:10px; margin-right:10px;cursor:pointer;">
+    <md-icon style="color:#449D44;"><i class="material-icons">save</i>  </md-icon></span> 
+
+
+    
+
+    </div>
+
+<div layout="row" style="width:100%;margin:0px;">
+
+
+
+<label flex="40" style="text-align:right;margin:5px;margin-right:10px;">First Name &nbsp;&nbsp;:</label>
+ <input flex="60" flex-gt-sm="40"  ng-show="vm.edit" class="textinput" ng-model="vm.userdata.firstName" type="text" placeholder="" 
+ style="margin:5px;">
+ 
+  <p ng-show="!vm.edit" style="margin:5px;color:#777;">{{vm.userdata.firstName}}</p>
+</div>
+
+<div layout="row" style="width:100%;margin:0px;">
+
+<label flex="40" style="text-align:right;margin:5px;margin-right:10px;">Last Name &nbsp;&nbsp;:</label>
+
+ <input flex="60" flex-gt-sm="40"  ng-show="vm.edit" class="textinput" ng-model="vm.userdata.lastName" type="text" placeholder=""
+  style="margin:5px;">
+  <p ng-show="!vm.edit" style="margin:5px;color:#777;">{{vm.userdata.lastName}}</p>
+</div>
+
+
+<div style="width:70%;margin:0px;"><md-divider inset style="margin:0px;"> </md-divider></div>
+
+<div layout="row" style="width:100%;margin:0px;">
+
+<label flex="40" style="text-align:right;margin:5px;margin-right:10px;">School &nbsp;&nbsp;:</label>
+ <input  flex="60" flex-gt-sm="40"   ng-show="vm.edit" class="textinput" 
+ ng-model="vm.userdata.institution" type="text" placeholder="" 
+ style="margin:5px">
+  <p ng-show="!vm.edit" style="margin:5px;color:#777;">{{vm.userdata.institution}}</p>
+
+</div>
+
+<div style="width:70%;margin:0px;"><md-divider inset style="margin:0px;"> </md-divider></div>
+
+<div layout="row" style="width:100%;margin:0px;">
+
+<label flex="40" style="text-align:right;margin:5px;margin-right:10px;">Form&nbsp;&nbsp;:</label>
+ <input  flex="60" flex-gt-sm="40"   ng-show="vm.edit" class="textinput" ng-model="vm.userdata.class" type="text" placeholder="" 
+ style="margin:5px">
+  <p ng-show="!vm.edit" style="margin:5px;color:#777;">{{vm.userdata.class}}</p>
+
+</div>
+
+<div style="width:70%;margin:0px;"><md-divider inset style="margin:0px;"> </md-divider></div>
+
+<div layout="row" style="width:100%;margin:0px;">
+
+<label flex="40" style="text-align:right;margin:5px;margin-right:10px;">Email &nbsp;&nbsp;:</label>
+ <input  flex="60" flex-gt-sm="40"   ng-show="vm.edit" class="textinput" ng-model="vm.userdata.email" type="text" placeholder="" 
+ style="margin:5px">
+  <p ng-show="!vm.edit" style="margin:5px;color:#777;">{{vm.userdata.email}}</p>
+
+</div>
+
+<div style="width:70%;margin:0px;"><md-divider inset style="margin:0px;"> </md-divider></div>
+
+
+
+<h5 
+     style="color:#37474F;margin-left:10px; margin-right:10px;cursor:pointer;margin:0px;padding:0px;">
+    <md-icon style="color:#80bed7;"><i class="material-icons">lock</i> </md-icon> Change Password</h5>
+
+<div layout="row" style="width:100%;margin:0px;">
+
+<label flex="40" style="text-align:right;margin:5px;margin-right:10px;">Old Password&nbsp;&nbsp;:</label>
+ <input flex="60" flex-gt-sm="40"  class="textinput" ng-model="vm.oldpass" type="password" placeholder="" 
+ style="margin:5px">
+  
+</div>
+
+<div layout="row" style="width:100%;margin:0px;">
+
+<label flex="40" style="text-align:right;margin:5px;margin-right:10px;">New Password&nbsp;&nbsp;:</label>
+ <input flex="60" flex-gt-sm="40"   class="textinput" ng-model="vm.newpass" type="password" placeholder="" style="margin:5px">
+ 
+</div>
+
+
+<div layout="row" style="width:100%;margin:0px;">
+
+<label flex="40" style="text-align:right;margin:5px;margin-right:10px;">Confirm Password&nbsp;&nbsp;:</label>
+ <input flex="60" flex-gt-sm="40"  class="textinput" ng-model="vm.confirmpass" type="password" placeholder="" style="margin:5px">
+  
+</div>
+
+<h6 style="margin:0px;color:#D64040;padding-top:2px;" ng-show="vm.error"> * {{vm.errormsg}}</h6>
+
+<button type="button" ng-disabled="vm.pbutton" 
+ ng-click="vm.updatePassword()" class="btn btn-success btn-lg">
+<md-icon style="color:#fff;"><i class="material-icons">lock_outline</i> </md-icon> Reset Password</button>
+
+<div style="width:70%;margin:0px;"><md-divider  style="margin:0px;"> </md-divider></div>
+
+
+
+
+
+
+        
+      
+
+
+
+
+</md-content>
+
+
+
+  </md-content>
+
+    </md-content>
+    
+  </section>
+</div>
+

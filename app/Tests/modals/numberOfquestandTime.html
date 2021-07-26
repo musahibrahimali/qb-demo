@@ -1,0 +1,33 @@
+<div   style="padding:10px;">
+
+    <md-input-container md-no-float class="md-block">
+      <md-icon > <i class="material-icons">format_list_numbered</i></md-icon>
+      <input ng-model="ctrl.parent.numOfquestion" type="number" 
+      placeholder="Number of questions">
+      <p style="font-size:10px;color:#777; margin-top:30px;  padding-top:10px;">Default number of questions is 30.</p>
+      <!-- <div ng-message="valid">The entered value is not a date!</div> -->
+    </md-input-container>
+   
+   <div layout="row">
+    <md-input-container md-no-float flex="33" >
+      <md-icon > <i class="material-icons">alarm</i></md-icon>
+      <input ng-model="ctrl.parent.hour" type="number" placeholder="hour">
+    </md-input-container>
+
+    <md-input-container md-no-float flex="33">
+      <input ng-model="ctrl.parent.min" type="number" placeholder="min">
+    </md-input-container>
+
+    <md-input-container md-no-float flex="33">
+      <input ng-model="ctrl.parent.sec" type="number" placeholder="sec">
+    </md-input-container>
+    </div>
+
+    <md-input-container  ng-click="ctrl.parent.dialogOpen=false;ctrl.parent.hideDialog()" md-no-float class="md-block" >
+    <md-button  style="margin:0 auto; width:100%;" class="md-raised md-primary 
+    md-hue-2">OK</md-button>
+    </md-input-container>
+
+
+	
+</div>

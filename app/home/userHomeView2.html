@@ -1,0 +1,196 @@
+
+<div ng-include="'app/patials/loadertmp.html'"></div>
+<div layout="column">
+
+
+  <section layout="row" flex>
+
+<div ng-include="'app/patials/leftnav.html'"></div>
+
+   <md-content flex layout="column"  class="viewContainer">
+
+    <div ng-include="'app/patials/toolbar.html'"></div>
+  <!--   <div ng-include="'app/patials/toolbar.html'"></div> -->
+
+
+ <div layout="row" layout-padding >
+
+ <div layout="column" layout-padding   style="margin-right:5px;">
+
+  <!-- <md-content  class="homecard" style="height:200px;">
+
+    <h4 style="color:#9197A3; margin:0px; vertical-align:middle;" class="md-subhead">
+   <md-icon> <i class="material-icons" style="">hearing</i> </md-icon>
+   <span >Announcement</span></h4>
+
+   <h4 style="color:#9197A3; margin:0px; vertical-align:middle;" class="md-subhead">
+   <i class="material-icons" style="font-size:18px;">trending_up</i>
+   <span >Accouncements</span></h4>
+   <md-divider > </md-divider>
+  </md-content> -->
+
+  <md-content    class="homecard" >
+
+    <h4 style="color:#9197A3; margin:0px; vertical-align:middle;" class="md-subhead">
+ <md-icon> <i class="material-icons" style="">comment</i> </md-icon>
+   <span >What's Happening</span></h4>
+
+   <md-input-container class="md-block">
+          <label>Say something</label>
+
+          <textarea ng-model="vm.userPost" rows="5"
+           md-select-on-focus></textarea>
+            <md-button ng-click="vm.addPost()" class="md-raised md-primary md-hue-2" style="float:right;">
+            <md-icon> <i class="material-icons">send</i></md-icon> Post</md-button>
+    </md-input-container>
+
+  </md-content>
+
+  <md-content  style="border:none;">
+
+
+ <!-- <md-subheader class="md-no-sticky"></md-subheader> -->
+
+   <md-list class="md-dense" flex>
+
+      <div class="nga-default nga-stagger nga-slide-up"
+      ng-repeat="post in  vm.Posts">
+
+        <md-list-item class="md-2-line">
+          <img ng-src="images/avatar.jpg" class="md-avatar" alt="" />
+          <div class="md-list-item-text" >
+            <h3>{{post.firstName}} {{post.lastName}}</h3>
+            <p class="md-caption" style="font-weight:400; margin:0px;">{{post.post}} </p>
+          </div>
+
+        </md-list-item>
+
+      <div class="md-toolbar-tools" style="height:40px;  margin:0px;">
+      <p class="md-caption" am-time-ago="post.dates | amParse:'YYYY-MM-DD HH:mm:ss'"></p>
+      <div flex></div>
+      <md-button style="height:30px;  margin:0px;" ui-sref="userhome"class="md-icon-button" aria-label="More">
+              <md-icon><i class="material-icons">menu</i></md-icon>
+            </md-button>
+
+      <md-button  style="height:30px;  margin:0px;" ui-sref="userhome"class="md-icon-button" aria-label="More">
+          <md-icon><i class="material-icons">share</i></md-icon>
+        </md-button>
+
+        <md-button  style="height:30px;  margin:0px;" ui-sref="userhome"class="md-icon-button" aria-label="More">
+          <md-icon><i class="material-icons">
+          <i class="material-icons">favorite_border</i></i></md-icon>
+        </md-button>
+
+        <md-button  style="height:30px;  margin:0px;" ui-sref="userhome"class="md-icon-button" aria-label="More">
+          <md-icon><i class="material-icons">reply</i></md-icon>
+        </md-button>
+
+      </div>
+<md-divider inset style="margin:3px 0;"> </md-divider>
+      </div>
+
+
+
+
+      </md-list>
+
+  </md-content>
+
+
+
+</div> <!-- end of column-->
+<div layout="column" hide show-gt-xs layout-padding flex="30"></div>
+
+<div layout="column" hide show-gt-xs layout-padding flex="30"
+   style="position:fixed; top:100px;right:10px;">
+
+  <md-content  class="homecard" style="">
+
+ <h4 style="color:#9197A3; margin:0px; vertical-align:middle;" class="md-subhead">
+ <md-icon> <i class="material-icons" style="">trending_up</i> </md-icon>
+   <span >Top Scores</span></h4>
+
+<md-divider > </md-divider>
+<!-- <ul class="md-body-1" style="list-style:none; padding:0px;">
+  <li ng-repeat="topscore in vm.topSore"><md-icon> <i class="material-icons" style="">school</i> </md-icon>
+  &nbsp;&nbsp;{{topscore.fullname}} <span style="float:right;">{{topscore.subject}}&nbsp;&nbsp;
+  <span class="mark md-body-1">{{topscore.score}}</span>
+  </span>
+  </li>
+</ul> -->
+<md-list style="width:200px;">
+  
+
+   <md-list-item class="md-2-line contact-item" ng-repeat="topscore in vm.topSore" >
+        <img ng-src="images/avator5.jpg" class="md-avatar" alt="" />
+        <div class="md-list-item-text compact">
+          <h3>{{topscore.fullname}}</h3>
+          <p>{{topscore.subject}} {{topscore.score}}</p>
+        </div>
+      </md-list-item> 
+
+
+ </md-list>
+
+
+
+  </md-content>
+
+  <!-- <md-content   class="homecard" style="">
+
+   <h4 style="color:#9197A3; margin:0px; vertical-align:middle;" class="md-subhead">
+   <md-icon> <i class="material-icons" style="">account_circle</i> </md-icon>
+   <span >Online</span></h4>
+  <md-divider > </md-divider>
+  <md-list>
+   <md-list-item  class="noright">
+    <img alt=" " ng-src="images/avatar.jpg" class="md-avatar" />
+    <h5 class="md-body-1" >Timothy Blackson</h5>
+  </md-list-item>
+  <md-divider > </md-divider>
+
+  <md-list-item  class="noright">
+    <img alt=" " ng-src="images/avatar.jpg" class="md-avatar" />
+    <h5 class="md-body-1" >Timothy Blackson</h5>
+  </md-list-item>
+  <md-divider > </md-divider>
+
+  <md-list-item  class="noright">
+    <img alt=" " ng-src="images/avatar.jpg" class="md-avatar" />
+    <h5 class="md-body-1" >Timothy Blackson</h5>
+  </md-list-item>
+  <md-divider > </md-divider>
+
+  <md-list-item  class="noright">
+    <img alt=" " ng-src="images/avatar.jpg" class="md-avatar" />
+    <h5 class="md-body-1" >Timothy Blackson</h5>
+  </md-list-item>
+  <md-divider > </md-divider>
+
+  <md-list-item  class="noright">
+    <img alt=" " ng-src="images/avatar.jpg" class="md-avatar" />
+    <h5 class="md-body-1" >Timothy Blackson</h5>
+  </md-list-item>
+  <md-divider > </md-divider>
+
+  <md-list-item  class="noright">
+    <img alt=" " ng-src="images/avatar.jpg" class="md-avatar" />
+    <h5 class="md-body-1" >Timothy Blackson</h5>
+  </md-list-item>
+  <md-divider > </md-divider>
+  </md-list>
+  </md-content>
+   -->
+
+
+</div> <!-- end of column-->
+
+
+ </div> <!-- end of row -->
+
+    </md-content>
+
+  </section>
+
+</div> <!-- end of container column -->
+

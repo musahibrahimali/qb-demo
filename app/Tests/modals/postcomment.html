@@ -1,0 +1,36 @@
+<div   layout="column" layout="start center" id="postcomment">
+  <p class="nomargin">
+<img ng-src="http://admin.quizbox.online/public/img/users/story2.jpg"  
+style="width:70px;height:70px;vertical-align:middle;" > <span style="margin:5px;">Kofi Karikari</span>
+  </p>
+  <p class="nomargin">
+   {{ctrl.parent.choosenPost.post}}
+  </p>
+  <md-divider inset style="margin:10px 0;"> </md-divider>
+  <md-input-container class="md-block">
+          <label>Comment on this post</label>
+
+          <textarea ng-model="ctrl.parent.replyPostText"  class="md-input" style="overflow: auto;"
+           md-select-on-focus></textarea>
+            <md-button ng-click="ctrl.parent.sendReply(ctrl.parent.choosenPost)" class="md-raised md-primary md-hue-2" style="float:right;">
+            <md-icon> <i class="material-icons">send</i></md-icon></md-button>
+    </md-input-container>
+<md-divider inset style="margin:10px 0;"> </md-divider>
+<p ng-if="ctrl.parent.replies == null" style="text-align:center;color:#ccc;">Be the first to comment on this post.</p>
+    <md-list   class="md-dense" > 
+      <div class="nga-default nga-stagger nga-slide-up"
+      ng-repeat="reply in  ctrl.parent.replies">
+
+        <md-list-item class="md-2-line">
+          <img ng-src="{{ctrl.parent.baseUrl+reply.profilePic}}" class="md-avatar" alt="" />
+          <div class="md-list-item-text" >
+            <h3>{{reply.fullname}}</h3>
+            <p class="md-body-1" style="width:inherit;font-weight:400;overflow-wrap:break-word;
+            word-break: break-all;">
+            {{reply.comment}}</p>
+          </div>
+
+        </md-list-item>
+      </md-list>
+   
+</div>

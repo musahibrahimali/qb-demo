@@ -1,0 +1,36 @@
+{
+  "name": "ngmaterial",
+  "authors": [
+    "paul karikari <pkarikari@yameservices.com>"
+  ],
+  "description": "my app",
+  "main": "",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~1.0.7",
+    "angular-material-icons": "~0.7.0",
+    "angular-material-sidenav": "~0.0.13",
+    "angular-material-data-table": "^0.10.9",
+    "ng-file-upload": "^12.0.4",
+    "ng-img-crop": "ngImgCrop#^0.3.2",
+    "angular-chart.js": "^0.10.2",
+    "Chart.js": "^2.1.6",
+    "angular-intro.js": "^2.0.3",
+    "angular-moment": "1.0.0-beta.3",
+    "angular-file-upload": "^2.3.4"
+  },
+  "resolutions": {
+    "angular": "1.5.3"
+  }
+}

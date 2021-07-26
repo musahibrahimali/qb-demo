@@ -1,0 +1,557 @@
+<div style="color:white;"  hide show-gt-sm>
+
+  <header md-page-header id="top">
+    <div md-header-picture id="loginbg">
+
+
+
+    <md-content layout="column" layout-align="center center" style="height:100vh; background:rgba(0,0,0,.5);">
+       <h1 class="md-display-3" style="color:rgb(214, 64, 64); font-weight:300; text-align:center;
+       margin-top:180px;">Play , Learn and Win</h1>
+       <h class="md-title" style="width:80%; color:white; font-weight:100;">The world's first interactive learning platform. Quizbox makes learning easy,fun and rewarding. Learn smart not hard, Practice with Quizbox and be among the very few smart students that easily pass their exams successfully. </h>
+
+       <button ng-click="vm.tryTest()" style="height:70px;width:200px;background:#EC6523;border:none;color:white; 
+       z-index:5; margin-top:20px;cursor:pointer;">
+        <h1 class="md-title">Try it, its Free</h1></button>
+
+  <md-content id="highscore" layout="row" layout-align="center center" 
+  style="background:transparent; position:relative; margin-top:100px;" > 
+
+ <div layout="row" style="color:white;margin-right:20px;margin-left:20px;">
+
+ <img src="images/avatar3.jpg" style="border:solid; border-color:white; width:100px; height:100px; border-radius:50%;" alt="">
+ <div >
+ <h5 class="md-subhead" style="margin:5px;">Adjoa Mansah</h5>
+
+ <p class="md-caption" style="margin:5px;">Wesley Girls SHS</p>
+
+ <h5 class="md-subhead" style="margin:5px;">Science : 95%</h5>
+ </div>
+ </div>
+
+ <div layout="row" style="color:white;margin-right:20px;margin-left:20px;">
+
+ <img src="images/avator8.jpg" style="border:solid; border-color:white; width:100px; height:100px; border-radius:50%;" alt="">
+ <div >
+
+ <h5 class="md-subhead" style="margin:5px;">Kofi Kinata</h5>
+
+ <p class="md-caption" style="margin:5px;">Accra Academy</p>
+
+ <h5 class="md-subhead" style="margin:5px;">Maths : 90%</h5>
+
+  </div>
+ </div>
+
+ <div layout="row"  style="color:white;margin-right:20px;margin-left:20px;">
+
+ <img src="images/avator2.jpg" style="border:solid; border-color:white; width:100px; height:100px; border-radius:50%;" alt="">
+ <div>
+
+ <h5 class="md-subhead" style="margin:5px;">Esi Bodei</h5>
+
+ <p class="md-caption" style="margin:5px;">Mfantiman Girls</p>
+
+ <h5 class="md-subhead" style="margin:5px;">English : 98%</h5>
+ </div>
+
+ </div>
+
+
+   <div class="arrow bounce">
+
+   </div>
+
+  
+
+  </md-content>
+
+  </md-content>
+        
+      </div>
+    </div> <!-- #EC6523 -->
+    <md-toolbar scroll >
+      <div class="md-toolbar-tools" style="color:white;">
+      <!-- <md-button class="md-tools"  aria-label="Go Back">
+          <md-icon aria-label="keyboard_arrow_left" class="material-icons">keyboard_arrow_left</md-icon>
+                 </md-button> -->
+        <h1 id="banner" style="font-family: 'Oleo Script', cursive; font-size:34px; font-weight:700;font-weight:300;"> Quiz<span style="color:#d64040">Box</span></h1>
+        <h2 md-header-title flex></h2>
+
+
+        <!--  <md-button ui-sref="login"class="md-tools navlink" aria-label="Home">
+        Home
+        </md-button> -->
+
+        <md-button ng-click="vm.signIn()" class="md-tools navlink" aria-label="Sign In">
+         Sign In
+        </md-button>
+
+
+
+         <md-button ng-click="vm.signUp()" class="md-tools navlink" aria-label="Sign Up">
+         Sign Up
+        </md-button>
+
+
+
+      </div>
+    </md-toolbar>
+    </header> 
+
+
+
+  <div   ng-hide="vm.show1" style="width:350px; height:300px;position:absolute;right:15px;top:50px; background:white;
+   z-index:10;">
+    <div class="signIn-arrow-up"></div>
+
+    <div style=""> 
+
+<div  id="signin"  
+      
+
+     style="background:white; margin-top:30px;
+      padding:20px;">
+      <h3 class="md-title" style="text-align:center;font-weight:200; margin:3px;" >Sign In</h3>
+     <br>
+     <div layout="row" ng-show="vm.SignInprogress" layout-align="center center">
+     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+     </div>
+     <br>
+   <h4 style="color:#00838F; text-align:center;" class="md-body-1">  
+   {{vm.loginResponse}} </h4>
+
+
+       <form action=""> 
+         <md-input-container class="md-icon-float md-block loginInput">
+            <label >Email</label>
+            <md-icon><i class="material-icons">email</i></md-icon>
+            <input ng-model="vm.userData.email"  type="text" style="">
+          </md-input-container>
+
+
+          <md-input-container class="md-icon-float md-block loginInput" >
+            <label >Password</label>
+             <md-icon><i class="material-icons">lock_outline</i></md-icon>
+            <input ng-model="vm.userData.password" type="password" >
+          </md-input-container>   
+
+        <md-button ng-click="vm.loginUser()" style="width:100%; color:white;
+         margin:0 auto;" class="md-primary  md-hue-2 md-raised"> 
+       <h1 class="md-body-2">Login</h1></md-button>
+    </form>
+
+
+       <h1 class="md-body-2" style="text-align:center; margin:30px 0;">or</h1>
+             <div layout="row" md-theme="blue" layout-align="center">
+
+      <md-button ng-click="vm.fblogin()" class="md-fab md-primary md-hue-2 md-raised" 
+      style="font-size:30px;">
+       <i class="fa fa-facebook"></i>
+      </md-button>
+
+      <md-button  ng-click="vm.fblogout()" class="md-fab md-primary md-raised" style="font-size:30px;">
+       <i class="fa fa-twitter"></i>
+      </md-button>
+  </div>
+    
+
+    </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<div    ng-hide="vm.show2"  class="" style="width:350px;position:absolute;right:15px;top:50px; background:white;z-index:10;">
+    <div class="signUp-arrow-up"></div>
+ 
+    <div style=""> 
+
+<div  id="signin"  
+      
+
+     style="background:white; margin-top:30px;
+      padding:20px;">
+      <h3 class="md-title" style="text-align:center;font-weight:200; margin:3px;" >Sign Up</h3>
+     <br>
+<p class="textcenter md-caption">
+     <a href="http://admin.quizbox.online/Users/teacher_registration">I am a teacher.</a></p>
+     <div layout="row" ng-show="vm.SignUprogress" layout-align="center center">
+     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+     </div>
+     <br>
+   <h4 style="color:#00838F; text-align:center;" class="md-body-1">  
+   {{vm.SignupResponse}} </h4>
+
+
+       <form action=""> 
+         <md-input-container class="md-icon-float md-block loginInput">
+            <label >First Name</label>
+            <md-icon><i class="material-icons">person</i></md-icon>
+            <input ng-model="vm.registrationData.firstName"  type="text" style="">
+          </md-input-container>
+
+           <md-input-container class="md-icon-float md-block loginInput">
+            <label >Last Name</label>
+            <md-icon><i class="material-icons">person</i></md-icon>
+            <input ng-model="vm.registrationData.lastName"  type="text" style="">
+          </md-input-container>
+
+          <md-input-container class="md-icon-float md-block loginInput">
+            <label >Email</label>
+            <md-icon><i class="material-icons">email</i></md-icon>
+            <input ng-model="vm.registrationData.email"  type="text" style="">
+          </md-input-container>
+       
+       <md-input-container class="md-icon-float md-block loginInput">
+        <label>Institution</label>
+
+          <md-icon><i class="material-icons">account_balance</i></md-icon>
+        <md-select ng-model="vm.registrationData.institute" >
+          <md-option  ng-value="school.id" ng-repeat="school in vm.schools" md-offset="0 50" >
+          {{school.name}}
+          </md-option>
+          
+        </md-select>
+      </md-input-container>
+       <br>
+        
+       <md-input-container class="md-icon-float md-block loginInput">
+        <label>Education Level</label>
+
+          <md-icon><i class="material-icons">school</i></md-icon>
+        <md-select ng-model="vm.registrationData.eduLevel">
+          <md-option  value="JHS">
+           JHS
+          </md-option>
+          <md-option  value="SHS">
+           SHS
+          </md-option>
+        </md-select>
+      </md-input-container>
+      <br>
+
+
+          <md-input-container class="md-icon-float md-block loginInput" >
+            <label >Password</label>
+             <md-icon><i class="material-icons">lock_outline</i></md-icon>
+            <input ng-model="vm.registrationData.password" type="password" >
+          </md-input-container>   
+
+  <md-input-container class="md-icon-float md-block loginInput" >
+            <label >Confirm</label>
+             <md-icon><i class="material-icons">lock_outline</i></md-icon>
+            <input ng-model="vm.registrationData.confirm" type="password" >
+          </md-input-container>   
+
+
+
+        <md-button ng-click="vm.registerUser()" style="width:100%; color:white;
+         margin:0 auto;" class="md-primary  md-hue-2 md-raised"> 
+       <h1 class="md-body-2">Sign Up</h1></md-button>
+    </form>
+
+
+       <h1 class="md-body-2" style="text-align:center; margin:30px 0;">or</h1>
+             <div layout="row" md-theme="blue" layout-align="center">
+
+      <md-button  class="md-fab md-primary md-hue-2 md-raised" 
+      style="font-size:30px;">
+       <i class="fa fa-facebook"></i>
+      </md-button>
+
+      <md-button  class="md-fab md-primary md-raised" style="font-size:30px;">
+       <i class="fa fa-twitter"></i>
+      </md-button>
+  </div>
+    
+
+    </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+<md-content hide-gt-sm>
+
+
+<!-- biginning of mobile landing page -->
+<div id="loginbg2" >
+
+ <!-- <md-toolbar style="position: fixed;z-index:12;">
+      <div class="md-toolbar-tools" style="color:white;">
+      <md-button class="md-tools"  aria-label="Go Back">
+          <md-icon aria-label="keyboard_arrow_left" class="material-icons">keyboard_arrow_left</md-icon>
+                 </md-button>
+        <h1 id="banner" style="font-family: 'Oleo Script', cursive; font-size:34px; font-weight:700;font-weight:300;"> Quiz<span style="color:#d64040">Box</span></h1>
+        <h2 md-header-title flex></h2>
+ 
+ 
+        <md-button ui-sref="login"class="md-tools navlink" aria-label="Home">
+        Home
+        </md-button>
+ 
+        <md-button ng-click="vm.signIn()" class="md-tools navlink" aria-label="Sign In">
+         Sign In
+        </md-button>
+ 
+ 
+ 
+         <md-button ng-click="vm.signUp()" class="md-tools navlink" aria-label="Sign Up">
+         Sign Up
+        </md-button>
+ 
+ 
+ 
+      </div>
+    </md-toolbar> -->
+ <md-content  layout="column"  layout-align="center center" style="height:100vh; background:rgba(0,0,0,.5);">
+       <h1 class="md-display-3" style="color:rgb(214, 64, 64); font-weight:300; text-align:center;
+       margin-top:100px;">Play , Learn and Win</h1>
+       <h class="md-title" style="width:80%; color:white; font-weight:100;text-align:center;font-size:24px;">The world's first interactive learning platform. <!-- Quizbox makes learning easy,fun and rewarding. Learn smart not hard, Practice with Quizbox and be among the very few smart students that easily pass their exams successfully.  --></h>
+
+       <button ng-click="vm.tryTest()" 
+       style="height:70px;width:200px;background:#EC6523;border:none;color:white; z-index:5; margin-top:20px;cursor:pointer;">
+        <h1 class="md-title" style="height:70px">Try it, its Free</h1></button>
+
+  <md-content id="highscore" layout="row" layout-align="center center" style="background:transparent; position:relative; margin-top:10px; height:90px; overflow-x:hidden;overflow-y:hidden;" > 
+
+ <div layout="row" ng-show="vm.imagesouce == 1" class="nga-slow nga-fade" 
+ style="color:white;margin-right:20px;margin-left:20px;display:inline;">
+ 
+ <img src="images/avatar3.jpg" style="border:solid; border-color:white; width:60px; height:60px; border-radius:50%;float:left;" alt="">
+ <div style="float:right;">
+ <h5 class="md-subhead" style="margin:5px;">Adjoa Mansah</h5>
+ 
+ <p class="md-caption" style="margin:5px;">Wesley Girls SHS</p>
+ 
+ <h5 class="md-subhead" style="margin:5px;">Science : 95%</h5>
+ </div>
+ </div> 
+  <div layout="row" ng-show="vm.imagesouce == 3" class="nga-slow nga-fade" style="color:white;margin-right:20px;margin-left:20px;display:inline;">
+ 
+ <img src="images/avator8.jpg" style="border:solid; border-color:white; width:60px; height:60px; border-radius:50%;float:left;" alt="">
+ <div style="float:right;">
+ 
+ <h5 class="md-subhead" style="margin:5px;">Kofi Kinata</h5>
+ 
+ <p class="md-caption" style="margin:5px;">Accra Academy</p>
+ 
+ <h5 class="md-subhead" style="margin:5px;">Maths : 90%</h5>
+ 
+  </div>
+ </div> 
+
+ <div layout="row"  ng-show="vm.imagesouce == 5" class="nga-slow nga-fade" style="color:white;margin-right:20px;margin-left:20px;
+ display:inline;">
+
+ <img src="images/avator2.jpg" style="border:solid; border-color:white; width:60px; height:60px; border-radius:50%;float:left;" alt="">
+ <span style="float:right;">
+
+ <h5 class="md-subhead" style="margin:5px;">Esi Bodei</h5>
+
+ <p class="md-caption" style="margin:5px;">Mfantiman Girls</p>
+
+ <h5 class="md-subhead" style="margin:5px;">English : 98%</h5>
+ </span>
+
+ </div>
+
+
+   <div class="arrow bounce">
+
+   </div>
+
+  
+
+  </md-content>
+
+  </md-content></div>
+
+
+</md-content>
+
+
+
+
+
+    <div style="padding-top:20px;">
+
+      <md-content layout="column"  layout-align="center center">
+
+<md-content  class="logincontent">
+<p> <img src="images/what.png" style="width:60px; height:100px;"></p>
+  <h1 >  What is Quizbox</h1>
+  <p class="md-body-1 loginWords"> QuizBox is a learning platform that provides you with the means and resources to get you prepared 
+before taking an examination that can really turn your life around. We'v all been 
+students and we know how involving learning can be. In our experience as students we also know that
+reading your notes and books alone can't really assure you success in your exams but with the practice of past questions
+you can find out your stregnths and weakness and even know how prepared you are before an examination.
+Not forgetting to mention the blissfull feeling you get when you come across a repeated past question in the exams.
+ </p>
+ <p class="md-body-1 loginWords" > 
+<span style="font-weight:700;">If practicing past questions helps students pass their exams then why does few students practice?
+</span>
+<br>
+Boredom, no feedback  and after going through the pain to answer the questions, you have to go through
+twice that pain to mark your self and check the right answers.
+We'v taken the responsibility to make your learning process more interesting and fun.</p>
+<md-divider style="margin:20px 0px;"> </md-divider>
+    </md-content>
+
+ 
+
+ <md-content class="logincontent">
+ 
+ <p> <img src="images/ge.png" style="width:100px; height:100px;"></p>
+  <h1>  How it works</h1>
+
+ 
+  <p class="md-body-1" > QuizBox is a bank of questions from examination bodies and schools.
+Quizbox serves you with questions depending on your choice,either from 
+an examination body or a school or a mix of both. You can choose the number
+of questions and the time for answering the questions. </p>
+
+  <md-divider style="margin:20px 0px;"> </md-divider>
+    </md-content>
+
+ <div flex class="features"> <h1 >  Things you can do.</h1> 
+<md-divider></md-divider>
+ </div>
+
+    <md-content layout-padding layout-margin layout="column" layout-gt-md="row" class="features">
+
+    
+
+ <md-content class="features" flex="25" layout="column">
+ <p class="imgcenter"> <img src="images/try.png" style="width:100px; height:100px;"></p>
+ <h1 class="md-subhead"> Practice </h1>
+<p class="md-body-1"> 
+You can practice as many questions as you want from both 
+examination bodies and schools at your own pace.</p>
+  </md-content>
+<md-divider style="margin:20px 0px;"> </md-divider>
+   <md-content class="features" flex="25" layout="column">
+ <p class="imgcenter"> <img src="images/fight.png" style="width:140px; height:100px;"></p>
+ <h1 class="md-subhead"> Challenge </h1>
+   <p class="md-body-1">  Learning alone is not fun.You can challenge your colleagues on exams 
+questions.
+ </p>
+  </md-content>
+<md-divider style="margin:20px 0px;"> </md-divider>
+  <md-content class="features" flex="25" layout="column">
+ <p class="imgcenter"> <img src="images/sharee.png" style="width:100px; height:100px;"></p>
+ <h1 class="md-subhead"> Interact </h1>
+   <p class="md-body-1">
+  You can discuss and share your ideas with your colleagues.</p>
+  </md-content>
+<md-divider style="margin:20px 0px;"> </md-divider>
+<md-content class="features" flex="25" layout="column">
+ <p class="imgcenter"> <img src="images/metric.png" style="width:100px; height:100px;"></p>
+ <h1 class="md-subhead"> Performance Metrics </h1>
+
+   <p class="md-body-1">
+Instant feedback and records of  your performance.
+You can tell wether you are well prepared for an examination.</p>
+
+  
+  </md-content>
+   
+   <md-divider style="margin:20px 0px;"> </md-divider>
+    </md-content>
+
+
+
+
+
+
+
+<md-content layout="row"   hide  show-gt-sm style="background:#D64040;height:300px;width:80%;overflow-y:hidden;">
+
+<div flex="40" style="">
+
+<img   ng-show="vm.imagesouce == 1" class="nga-slow nga-slide-left" ng-src="images/story.jpg" style="height:100%;width:400px;" />
+<img   ng-show="vm.imagesouce == 2" class="nga-slow nga-slide-left" ng-src="images/story1.jpg" style="height:100%;width:400px;" />
+<img   ng-show="vm.imagesouce == 3" class="nga-slow nga-slide-left" ng-src="images/story2.jpg" style="height:100%;width:400px;" />
+
+
+</div>
+
+<div flex="60" layout="row" layout-align="center center" layout-padding>
+
+<p  ng-show="vm.imagesouce == 1" class="nga-slow nga-slide-left" style="color:white;text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iure ipsa, quasi velit, laborum consequuntur </p>
+
+<p  ng-show="vm.imagesouce == 2" class="nga-slow nga-slide-left" style="color:white;text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iure ipsa, quasi velit, laborum </p>
+
+<p  ng-show="vm.imagesouce == 3" class="nga-slow nga-slide-left" style="color:white;text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iure ipsa, quasi velit</p>
+
+</div>
+
+
+</md-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+     </md-content>
+
+
+
+
+<md-content  layout="column" layout-gt-md="row" layout-align-sm="center center" layout-align-md="center center" 
+style="background:#263C49;margin-top:50px;">
+
+<div layout="row" layout-align-sm="center center" layout-align="center center" >
+<!-- <h4> Follow Us</h4> -->
+<img   ng-src="images/ifb.png" style="height:36px;width:36px;margin:5px;" />
+<img   ng-src="images/itwitter.png" style="height:36px;width:36px;margin:5px;" />
+<img   ng-src="images/insta.png" style="height:36px;width:36px;margin:5px;" />
+
+</div>
+<div flex>
+
+</div>
+
+<div  layout="row" layout-align-sm="center center" layout-align="center center" style="color:#cccccc;margin:5px;"><p class="md-caption">HOME | FAQ | Sign In | Sign Up </p></div>
+
+
+</md-content>
+
+    
+
+    </div>
+
+    <!-- Oleo Script -->

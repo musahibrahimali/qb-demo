@@ -1,0 +1,145 @@
+
+<div ng-include="'app/patials/loadertmp.html'"></div>
+
+<div layout="column">
+  <section layout="row" flex>
+    
+
+<div ng-include="'app/patials/leftnav.html'"></div>
+
+    <md-content flex layout="column" class="viewContainer">
+
+    <div ng-include="'app/patials/toolbar.html'"></div>
+  <!--   <div ng-include="'app/patials/toolbar.html'"></div> -->
+  <md-content style=""  md-whiteframe="6" >
+    
+  
+                   <!-- 
+  <md-progress-linear md-mode="indeterminate"></md-progress-linear> -->
+
+<div >
+
+  <md-toolbar class="md-table-toolbar md-default">
+  <div class="md-toolbar-tools">
+  
+    <h1 class="md-headline" style="color:#37474F;">General Performance </h1>
+  </div>
+</md-toolbar>
+
+<!-- exact table from live demo -->
+<div layout="row" layout-align="center center" layout-padding style="margin-bottom:20px;">
+
+
+  <div flex="100"  flex-gt-sm="50" style="height:400px;">
+    <canvas  style="height:400px !important;min-height:400px !important;" id="bar" class="chart chart-bar" chart-data="OverAlldata" 
+    chart-labels="OverAllLabels" chart-series="OverAllseries" 
+    chart-legend="true"  >
+
+  </canvas>
+
+
+
+  
+  </div>
+
+
+  </div>
+
+<md-table-container style="margin-top:70px;">
+  <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+    <thead md-head md-order="vm.recordOrder" >
+      <tr md-row>
+        <th md-column md-order-by="subject"><span>Subject Name</span></th>
+        <th md-column md-order-by="score"><span>Score</span></th>
+        <th md-column ><span>Dates</span></th>
+       
+        <!-- <th md-column md-numeric>Carbs (g)</th>
+        <th md-column md-numeric>Protein (g)</th>
+        <th md-column md-numeric>Sodium (mg)</th>
+        <th md-column md-numeric>Calcium (%)</th>
+        <th md-column md-numeric>Iron (%)</th> -->
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row md-select="record" md-select-id="name" ng-click="vm.getdetail(record.subject)" md-auto-select ng-repeat="record in vm.performance | orderBy: 
+      vm.recordOrder">
+        <td md-cell>{{record.subject}}</td>
+         <td md-cell>{{record.score}}</td>
+          <td md-cell><span class="md-caption" am-time-ago="record.dates | amParse:'YYYY-MM-DD HH:mm:ss'"></span></td>
+        <!-- <td md-cell>{{dessert.calories.value}}</td>
+        <td md-cell>{{dessert.fat.value | number: 1}}</td>
+        <td md-cell>{{dessert.carbs.value}}</td>
+        <td md-cell>{{dessert.protein.value | number: 1}}</td>
+        <td md-cell>{{dessert.sodium.value}}</td>
+        <td md-cell>{{dessert.calcium.value}}{{dessert.calcium.unit}}</td>
+        <td md-cell>{{dessert.iron.value}}{{dessert.iron.unit}}</td> -->
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <md-table-container>
+  <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+    <thead md-head md-order="vm.recordOrder" >
+      <tr md-row>
+        <th md-column md-order-by="testName"><span>Test Name</span></th>
+        <th md-column md-order-by="score"><span>Score</span></th>
+        <th md-column >Date </th>
+        <th md-column md-numeric>Carbs (g)</th>
+        <th md-column md-numeric>Protein (g)</th>
+        <th md-column md-numeric>Sodium (mg)</th>
+        <th md-column md-numeric>Calcium (%)</th>
+        <th md-column md-numeric>Iron (%)</th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row md-select="record" md-select-id="name" md-auto-select ng-repeat="record in vm.performance | orderBy: 
+      vm.recordOrder">
+        <td md-cell>{{record.testName}}</td>
+         <td md-cell>{{record.score}}</td>
+          <td md-cell>{{record.date}}</td>
+        <td md-cell>{{dessert.calories.value}}</td>
+        <td md-cell>{{dessert.fat.value | number: 1}}</td>
+        <td md-cell>{{dessert.carbs.value}}</td>
+        <td md-cell>{{dessert.protein.value | number: 1}}</td>
+        <td md-cell>{{dessert.sodium.value}}</td>
+        <td md-cell>{{dessert.calcium.value}}{{dessert.calcium.unit}}</td>
+        <td md-cell>{{dessert.iron.value}}{{dessert.iron.unit}}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container> -->
+
+
+
+  </md-content>
+
+    </md-content>
+    
+  </section>
+</div>
+

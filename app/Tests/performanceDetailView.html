@@ -1,0 +1,171 @@
+
+<div ng-include="'app/patials/loadertmp.html'"></div>
+
+<div layout="column">
+  <section layout="row" flex>
+    
+
+<div ng-include="'app/patials/leftnav.html'"></div>
+
+    <md-content flex layout="column" class="viewContainer">
+
+    <div ng-include="'app/patials/toolbar.html'"></div>
+  <!--   <div ng-include="'app/patials/toolbar.html'"></div> -->
+  <md-content style=""  md-whiteframe="6" >
+    
+  
+                   <!-- 
+  <md-progress-linear md-mode="indeterminate"></md-progress-linear> -->
+
+
+
+<div >
+
+ <md-toolbar class="md-table-toolbar md-default">
+  <div  class="md-toolbar-tools">
+  
+   <h1 class="md-headline"  hide show-gt-sm style="color:#37474F;">{{vm.subjectName}} Performance Details </h1>
+    
+     <h1 class="md-headline"  hide-gt-sm  style="color:#37474F;font-size:14px;">{{vm.subjectName}} Performance Details
+     </h1>  
+    
+
+
+    <div flex></div>
+
+ <!--  <md-button  ng-click="vm.subjectsTaken()" class="md-icon-button" aria-label="More">
+ 
+       <md-icon><i class="material-icons"></i></md-icon>
+  </md-button> -->
+
+   <md-button  ng-click="vm.subjectsTaken()" class="md-raised" style="color:white;background:#80bed7;">
+
+    <h4 style="color:white;margin:0px; vertical-align:middle;" class="md-subhead">
+ <md-icon style="color:white;"> 
+ <i class="material-icons" style="">fast_rewind</i> </md-icon>
+  
+  </h4> </md-button>
+  </div>
+  
+
+</md-toolbar>
+
+  <div layout="column" layout-gt-sm="row" layout-align="center center" layout-padding>
+
+  <div flex="100" flex-gt-sm="20">
+    <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series" >
+
+  </canvas>
+  </div>
+
+<div flex="5"></div>
+
+<div flex="100" flex-gt-sm="20" >
+
+  <canvas id="line" class="chart chart-line" chart-data="data1"
+    chart-labels="labels1" chart-legend="true" chart-series="series1"
+    chart-click="onClick" >
+  </canvas> 
+
+  </div>
+
+
+  </div>
+
+
+<md-table-container style="margin-bottom:100px;">
+  <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+    <thead md-head md-order="vm.recordOrder" >
+      <tr md-row>
+       <!--  <th md-column md-order-by="subject"><span>Subject Name</span></th> -->
+        <th md-column md-order-by="score"><span>Score</span></th>
+        <th md-column ><span>Dates</span></th>
+       
+        <!-- <th md-column md-numeric>Carbs (g)</th>
+        <th md-column md-numeric>Protein (g)</th>
+        <th md-column md-numeric>Sodium (mg)</th>
+        <th md-column md-numeric>Calcium (%)</th>
+        <th md-column md-numeric>Iron (%)</th> -->
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row md-select="record" md-select-id="name"  md-auto-select ng-repeat="record in vm.subjectPerformanceDetail | orderBy: 
+      vm.recordOrder">
+        <!-- <td md-cell>{{record.subject}}</td> -->
+         <td md-cell >{{record.score}}</td>
+          <td md-cell> <span class="md-caption" am-time-ago="record.dates | amParse:'YYYY-MM-DD HH:mm:ss'"></span></td> 
+        <!-- <td md-cell>{{dessert.calories.value}}</td>
+        <td md-cell>{{dessert.fat.value | number: 1}}</td>
+        <td md-cell>{{dessert.carbs.value}}</td>
+        <td md-cell>{{dessert.protein.value | number: 1}}</td>
+        <td md-cell>{{dessert.sodium.value}}</td>
+        <td md-cell>{{dessert.calcium.value}}{{dessert.calcium.unit}}</td>
+        <td md-cell>{{dessert.iron.value}}{{dessert.iron.unit}}</td> -->
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+
+<br>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <md-table-container>
+  <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+    <thead md-head md-order="vm.recordOrder" >
+      <tr md-row>
+        <th md-column md-order-by="testName"><span>Test Name</span></th>
+        <th md-column md-order-by="score"><span>Score</span></th>
+        <th md-column >Date </th>
+        <th md-column md-numeric>Carbs (g)</th>
+        <th md-column md-numeric>Protein (g)</th>
+        <th md-column md-numeric>Sodium (mg)</th>
+        <th md-column md-numeric>Calcium (%)</th>
+        <th md-column md-numeric>Iron (%)</th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row md-select="record" md-select-id="name" md-auto-select ng-repeat="record in vm.performance | orderBy: 
+      vm.recordOrder">
+        <td md-cell>{{record.testName}}</td>
+         <td md-cell>{{record.score}}</td>
+          <td md-cell>{{record.date}}</td>
+        <td md-cell>{{dessert.calories.value}}</td>
+        <td md-cell>{{dessert.fat.value | number: 1}}</td>
+        <td md-cell>{{dessert.carbs.value}}</td>
+        <td md-cell>{{dessert.protein.value | number: 1}}</td>
+        <td md-cell>{{dessert.sodium.value}}</td>
+        <td md-cell>{{dessert.calcium.value}}{{dessert.calcium.unit}}</td>
+        <td md-cell>{{dessert.iron.value}}{{dessert.iron.unit}}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container> -->
+
+
+
+  </md-content>
+
+    </md-content>
+    
+  </section>
+</div>
+

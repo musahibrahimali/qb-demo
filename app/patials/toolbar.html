@@ -1,0 +1,270 @@
+   
+
+       <div flex style="height:90px;"></div>
+      <md-toolbar flex class="md-hue-2" style="position:fixed;top:0px;right:0px;z-index:10;" >
+
+     
+
+
+      <div class="md-toolbar-tools"  hide  show-gt-sm aria-label="Menu">
+        <md-button hide-gt-md ng-click="vm.openLeftMenu()"  class="md-icon-button"
+         aria-label="Settings">
+          <md-icon><i class="material-icons">menu</i> </md-icon>
+        </md-button>
+
+
+
+        <span flex></span>
+
+         <h1 id="banner" 
+      style="font-family: 'Oleo Script', cursive; font-weight:700;font-weight:300;font-size:34px;
+      margin:5px;padding:0px;z-index:88;"> 
+      Quiz<span style="color:#d64040;">Box</span></h1>
+
+       <!--  <h2>
+         <span>{{ vm.viewTitle}}</span>
+       </h2> -->
+       
+
+        <span flex></span>
+        <!-- <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg" 
+          style="color: greenyellow;"></md-icon>
+        </md-button> -->
+
+       
+
+      <!-- <md-menu md-offset="0 50" >
+        <md-button md-menu-origin ng-click="$mdOpenMenu()">My Qbox1</md-button>
+        <md-menu-content  md-position-mode="target target" width="4">
+            <md-menu-item>
+                <md-button>Friends</md-button>
+            </md-menu-item>
+      
+            <md-menu-item>
+                <md-button>Prep Trials</md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button>Context</md-button>
+            </md-menu-item>
+              <md-menu-item>
+                <md-button>Masters</md-button>
+            </md-menu-item>
+      
+            <md-menu-item>
+                <md-button>Champions</md-button>
+            </md-menu-item>
+        </md-menu-content>
+          </md-menu>
+       -->
+  
+
+        <md-button ui-sref="userhome" ng-click="vm.getload('Taking You home')"class="md-icon-button" aria-label="More">
+          <md-icon><i class="material-icons">home</i></md-icon>
+
+        </md-button>
+
+
+       <md-menu md-offset="0 50"  style="margin:0px;padding:0px;">
+        <md-button md-menu-origin ng-click="$mdOpenMenu()">
+         <md-icon> <i class="material-icons">notifications_active</i></md-icon><span class="badge badge-error">{{vm.userInfo.pendingRequest}}</span>
+        </md-button>
+        <md-menu-content width="4">
+           
+              <md-menu-item>
+             <md-button ui-sref="userhome"  aria-label="More">
+             
+             <p style="margin:0px;">
+             <span class="badge badge-info"> {{vm.userInfo.pendingRequest}}</span>
+
+            &nbsp;
+            Challenge Request</p>
+            </md-button>
+            </md-menu-item>
+
+      
+
+<!-- 
+             <md-menu-item>
+             <md-button ui-sref="userhome"  aria-label="More">
+             
+             <p style="margin:0px;">
+             <span class="badge badge-success"> 7</span>
+             &nbsp;
+            
+            Assignments </p>
+            </md-button>
+            </md-menu-item>
+
+
+            <md-menu-item>
+             <md-button ui-sref="userhome"  aria-label="More">
+             
+             <p style="margin:0px;">
+             <span class="badge badge-warning"> 5</span>
+             &nbsp;
+            
+            Ongoing championship</p>
+            </md-button>
+            </md-menu-item>
+ -->
+        </md-menu-content>
+    </md-menu>
+
+    
+
+        <!-- <md-button ui-sref="userhome"class="md-icon-button" aria-label="More">
+          <md-icon><i class="material-icons">dashboard</i></md-icon>
+        </md-button> -->
+
+        <md-button ui-sref="login" ng-click="vm.getload('Good bye')"class="md-icon-button" aria-label="More">
+          <md-icon><i class="material-icons">power_settings_new</i></md-icon>
+        </md-button>
+
+      </div>
+
+
+
+<!-- MOBILE NAV -->
+
+
+
+
+      <div class="md-toolbar-tools" hide-gt-sm    aria-label="Menu">
+
+        <md-button hide-gt-md ng-click="vm.openLeftMenu()"  class="md-icon-button"
+         aria-label="Settings">
+          <md-icon><i class="material-icons">menu</i> </md-icon>
+        </md-button>
+       
+      
+         <h1 id="banner" 
+      style="font-family: 'Oleo Script', cursive; font-weight:700;font-weight:300;font-size:34px;
+      margin:5px;padding:0px;z-index:88;"> 
+      Quiz<span style="color:#d64040;">Box</span></h1>
+    
+
+        <h2>
+          <span>{{ vm.viewTitle}}</span>
+        </h2>
+        <span flex></span>
+        <!-- <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg" 
+          style="color: greenyellow;"></md-icon>
+        </md-button> -->
+
+       <!--  <md-button style="margin:0px;padding:0px;">
+        <md-icon> <i class="material-icons">notifications_active</i></md-icon><span class="badge badge-error">20</span>
+             </md-button> -->
+
+<md-menu md-offset="0 50"  style="margin:0px;padding:0px;">
+        <md-button md-menu-origin ng-click="$mdOpenMenu()">
+         <md-icon> <i class="material-icons">notifications_active</i></md-icon><span class="badge badge-error">18</span>
+        </md-button>
+        <md-menu-content width="4">
+           
+              <md-menu-item>
+             <md-button ui-sref="userhome"  aria-label="More">
+             
+             <p style="margin:0px;">
+             <span class="badge badge-info"> 6</span>
+
+            &nbsp;
+            Challenge Request</p>
+            </md-button>
+            </md-menu-item>
+
+      
+
+
+             <md-menu-item>
+             <md-button ui-sref="userhome"  aria-label="More">
+             
+             <p style="margin:0px;">
+             <span class="badge badge-success"> 7</span>
+             &nbsp;
+            
+            Assignments </p>
+            </md-button>
+            </md-menu-item>
+
+
+            <md-menu-item>
+             <md-button ui-sref="userhome"  aria-label="More">
+             
+             <p style="margin:0px;">
+             <span class="badge badge-warning"> 5</span>
+             &nbsp;
+            
+            Ongoing championship</p>
+            </md-button>
+            </md-menu-item>
+
+        </md-menu-content>
+    </md-menu>
+
+    
+
+
+      <md-menu  md-offset="0 50"  style="margin:0px;padding:0px;">
+        <md-button md-menu-origin ng-click="$mdOpenMenu()">
+         <md-icon><i class="material-icons">more_vert</i></md-icon>
+        </md-button>
+        <md-menu-content width="4">
+            <!-- <md-menu-item>
+                <md-button>Friends</md-button>
+            </md-menu-item>
+            
+            <md-menu-item>
+                <md-button>Prep Trials</md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button>Context</md-button>
+            </md-menu-item>
+              <md-menu-item>
+                <md-button>Masters</md-button>
+            </md-menu-item>
+            
+            <md-menu-item>
+                <md-button>Champions</md-button>
+            </md-menu-item> -->
+
+              <md-menu-item>
+             <md-button ui-sref="userhome"  aria-label="More">
+              <md-icon><i class="material-icons">home</i></md-icon>
+              Home
+            </md-button>
+            </md-menu-item>
+
+          <!--   <md-menu-item>
+           <md-button>
+                     <md-icon> <i class="material-icons">notifications_active</i></md-icon>(3)
+          </md-button>
+          </md-menu-item> -->
+
+
+            <md-menu-item>
+            <md-button ui-sref="login" aria-label="More">
+           <md-icon><i class="material-icons">power_settings_new</i></md-icon>
+           Sign Out
+           </md-button> 
+            </md-menu-item>
+
+        </md-menu-content>
+    </md-menu>
+
+  
+
+       
+       
+
+        <!-- <md-button ui-sref="userhome"class="md-icon-button" aria-label="More">
+          <md-icon><i class="material-icons">dashboard</i></md-icon>
+        </md-button> -->
+
+        
+
+      </div>
+    </md-toolbar>
+
+  

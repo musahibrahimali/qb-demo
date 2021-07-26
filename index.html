@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	 <meta name="description" content="">
+   <!--  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" /> -->
+
+ <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+	<title>Question Box</title>
+ 
+ <link rel="stylesheet" href="css/qbox.css"/>
+ <link rel="stylesheet" href="css/font-awesome.min.css"/>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+ <link rel="stylesheet" href="css/nga.min.css"/>
+ <link rel="stylesheet" href="css/jk-carousel.min.css"/>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+ <link href='https://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+ 
+ <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+ <link href="bower_components/angular-material-data-table/dist/md-data-table.min.css" rel='stylesheet' type="text/css"/>
+
+ <link rel="stylesheet" type="text/css" href="bower_components/ng-img-crop/ng-img-crop.css" />
+
+ <link rel="stylesheet" href="bower_components/angular-chartjs/dist/angular-chart.css">
+
+ 
+ <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+    <script  type="text/javascript" charset="utf-8">
+   
+   
+window.onbeforeunload = function(e) {
+
+
+   if(window.location.hash != "#/Welcome#top"){
+
+    e = e || window.event;
+
+
+    e.preventDefault();
+    e.cancelBubble = true;
+    e.returnValue = 'Refreshing is not necessary';
+
+
+}
+    
+};
+
+document.addEventListener("DOMContentLoaded", function(event) {
+        /*VANILLA JAVASCRIPT*/
+        var element = document.getElementById("pageloading");
+        element.parentNode.removeChild(element);
+       
+});
+    
+    </script>
+	  
+</head>
+
+<body ng-app="Qbox" ng-cloak>
+
+
+
+	
+	
+	<div ui-view autoscroll="true" ></div>
+
+
+
+<div id="pageloading">
+   <div style="height:40vh; "></div>
+    <img style="display:block; margin:0 auto;" src="images/startingloader.gif">
+    <p class="textcenter"><strong>... Get ready for a new learning experience ...</strong></p>
+</div>
+
+<!-- Library Scripts -->
+
+ <script src="bower_components/angular/angular.js"></script>
+      <!--  test mocker -->
+ <script src="js/angular-mocks.js"></script>
+ <script src="js/jk-carousel.min.js"></script>
+
+ <script src="bower_components/angular-animate/angular-animate.js"></script>
+ <script src="bower_components/angular-aria/angular-aria.js"></script>
+ <script src="bower_components/angular-material/angular-material.js"></script>
+ <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+ <script type="text/javascript" src="bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
+
+ <script src="bower_components/Chartjs/Chart.js"></script>
+ <script src="bower_components/angular-chartjs/dist/angular-chart.js"></script>
+
+ <script type="text/javascript" src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+ <script type="text/javascript" src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+
+
+<script src="http://nervgh.github.io/js/es5-shim.min.js"></script>
+  <script src="http://nervgh.github.io/js/es5-sham.min.js"></script>
+
+  <script src="bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
+
+ <script type="text/javascript" src="bower_components/ng-img-crop/ng-img-crop.js"></script>
+ <script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/angular-moment/angular-moment.js"></script>
+ <!-- facebook -->
+ <script src="bower_components/angular-easyfb/build/angular-easyfb.min.js"></script>
+
+
+
+	  <!-- Application  Scripts -->
+	  <script src="app/app.js"></script>
+
+   
+
+
+       <!-- Controllers Scripts -->
+	  <script src="app/login/loginPageCtrl.js"></script>
+	  <script src="app/login/signPageCtrl.js"></script>
+	  <script src="app/login/registerPageCtrl.js"></script>
+	  <script src="app/home/userHomeCtrl.js"></script>
+	  <script src="app/Tests/prepTestCtrl.js"></script>
+	  <script src="app/Tests/prepTestByInstCtrl.js"></script>
+	  <script src="app/Tests/prepTestExamCtrl.js"></script>
+	  <script src="app/Tests/prepTestExamResultCtrl.js"></script>
+	  <script src="app/Tests/prepTestByInstQuestionCtrl.js"></script>
+	  <script src="app/Tests/prepTestByInstSubjectCtrl.js"></script>
+	  <script src="app/Tests/performanceCtrl.js"></script>
+	  <script src="app/Tests/performanceDetailCtrl.js"></script>
+	  <script src="app/Tests/accountCtrl.js"></script>
+	  <script src="app/Tests/challengeCtrl.js"></script>
+
+
+
+	  <script src="app/Tests/challengeRequestsCtrl.js"></script>
+	  <script src="app/Tests/challengeHistoryCtrl.js"></script>
+	  <script src="app/Tests/challengeTestExamCtrl.js"></script>
+	  
+	  <!-- services -->
+	  <script src="common/services/timeService.js"></script>
+	  <script src="common/services/dataService.js"></script>
+	  <script src="common/services/datamock.js"></script>
+	  <script src="common/services/questionService.js"></script>
+	 
+      
+	 
+
+</body>
+</html>
